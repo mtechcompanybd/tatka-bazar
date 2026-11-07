@@ -1,1 +1,146 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>টাটকা বাজার - Public Demo</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<header>
+  <div class="brand">
+    <b>ট</b>
+    <span>
+      <strong>টাটকা বাজার</strong>
+      <small>A Brand of M-Tech</small>
+    </span>
+  </div>
+  <label>PUBLIC DEMO</label>
+</header>
+
+<section class="hero">
+  <p>কেশবপুর, যশোর</p>
+  <h1>আপনার পছন্দের বাজার,<br>বিশ্বস্ত মানুষের হাতে।</h1>
+  <p>স্থানীয় বাজার থেকে পণ্য সংগ্রহ ও ঘরে পৌঁছে দেওয়ার ডিজিটাল সেবা।</p>
+</section>
+
+<nav>
+  <button class="active" data-tab="customer">গ্রাহক অ্যাপ</button>
+  <button data-tab="partner">বাজার প্রতিনিধি</button>
+  <button data-tab="admin">অ্যাডমিন</button>
+  <button data-tab="accounts">হিসাব বিভাগ</button>
+  <button data-tab="hr">HR</button>
+</nav>
+
+<main>
+<aside>
+<strong>ডেমো নোট:</strong>
+এখানে প্রদর্শিত সব তথ্য ও হিসাব নমুনা। বাস্তব অর্ডার বা পেমেন্ট চালু নেই।
+</aside>
+
+<section id="customer" class="screen show">
+<h2>আজকের বাজার</h2>
+<div class="stats">
+<article>নমুনা পণ্য<strong>১২টি</strong></article>
+<article>সেবা চার্জ<strong>৫%</strong></article>
+<article>সেবা এলাকা<strong>কেশবপুর</strong></article>
+</div>
+
+<div class="filters">
+<input id="q" placeholder="পণ্য খুঁজুন">
+<select id="cat">
+<option value="all">সব ক্যাটাগরি</option>
+<option>নিত্যপ্রয়োজনীয়</option>
+<option>শাকসবজি</option>
+<option>মাছ</option>
+<option>মসলা</option>
+</select>
+</div>
+
+<div id="products" class="products"></div>
+
+<div class="panel">
+<h3>আপনার বাজারের তালিকা</h3>
+<div id="cart">পণ্য যোগ করলে এখানে দেখা যাবে।</div>
+<p class="total">আনুমানিক মোট: <b id="total">৳০</b></p>
+<button id="order">নমুনা অর্ডার দেখুন</button>
+<p id="msg"></p>
+</div>
+</section>
+
+<section id="partner" class="screen">
+<h2>বাজার প্রতিনিধির ড্যাশবোর্ড</h2>
+<div class="stats">
+<article>আজ বরাদ্দ<strong>০৩</strong></article>
+<article>কেনাকাটা চলছে<strong>০১</strong></article>
+<article>ডেলিভারি বাকি<strong>০২</strong></article>
+</div>
+<div class="panel">
+<h3>নমুনা অর্ডার #TB-1024</h3>
+<p>গ্রাহক: রহিমা খাতুন (ডেমো)</p>
+<p>এলাকা: কেশবপুর পৌরসভা, ৩ নং ওয়ার্ড</p>
+<p>পণ্য: আলু ২ কেজি, টমেটো ১ কেজি, রুই মাছ ১ কেজি</p>
+<p>ধাপ: অর্ডার গ্রহণ → বাজার করা → ছবি/দাম আপলোড → অনুমোদন → ডেলিভারি</p>
+</div>
+</section>
+
+<section id="admin" class="screen">
+<h2>অ্যাডমিন প্যানেল</h2>
+<div class="stats">
+<article>নমুনা অর্ডার<strong>২৪</strong></article>
+<article>সক্রিয় প্রতিনিধি<strong>০৮</strong></article>
+<article>সেবা এলাকা<strong>০১ উপজেলা</strong></article>
+</div>
+<div class="panel">
+<h3>অর্ডার ব্যবস্থাপনা</h3>
+<table>
+<tr><th>অর্ডার</th><th>এলাকা</th><th>অবস্থা</th><th>মূল্য</th></tr>
+<tr><td>TB-1024</td><td>৩ নং ওয়ার্ড</td><td>কেনাকাটা চলছে</td><td>৳৮৫০</td></tr>
+<tr><td>TB-1025</td><td>৫ নং ওয়ার্ড</td><td>অনুমোদনের অপেক্ষায়</td><td>৳১,২৩০</td></tr>
+<tr><td>TB-1026</td><td>২ নং ওয়ার্ড</td><td>ডেলিভারি সম্পন্ন</td><td>৳৬৭০</td></tr>
+</table>
+</div>
+</section>
+
+<section id="accounts" class="screen">
+<h2>হিসাব ও অর্থ বিভাগ</h2>
+<div class="stats">
+<article>নমুনা পণ্য মূল্য<strong>৳২৭,৫০০</strong></article>
+<article>নমুনা সেবা আয়<strong>৳১,৩৭৫</strong></article>
+<article>নমুনা ব্যয়<strong>৳৪,২০০</strong></article>
+</div>
+<div class="panel">
+<h3>হিসাবের নীতি</h3>
+<ul>
+<li>গ্রাহকের অগ্রিম জমা আলাদা লেজারে থাকবে।</li>
+<li>পণ্য ও সেবা সম্পন্ন হওয়ার পর প্রকৃত আয়-ব্যয় হিসাব হবে।</li>
+<li>পণ্য ক্রয়, সেবা চার্জ, পরিবহন ও রিফান্ড পৃথকভাবে রেকর্ড হবে।</li>
+</ul>
+<p class="warning">সংখ্যাগুলো নমুনা, প্রকৃত আয় বা মুনাফা নয়।</p>
+</div>
+</section>
+
+<section id="hr" class="screen">
+<h2>মানবসম্পদ ব্যবস্থাপনা</h2>
+<div class="panel">
+<h3>নমুনা টিম কাঠামো</h3>
+<p><b>Founder & CEO</b> — ব্যবসায়িক কৌশল ও তদারকি</p>
+<p><b>Co-Founder & COO</b> — অপারেশন ও প্রতিনিধি সমন্বয়</p>
+<p><b>Delivery / Operations</b> — সংগ্রহ ও ডেলিভারি</p>
+<p><b>Accounts & Finance</b> — আর্থিক প্রতিবেদন</p>
+<p><b>Digital Marketing & Sales</b> — গ্রাহক ও প্রচারণা</p>
+</div>
+</section>
+</main>
+
+<footer>
+<strong>টাটকা বাজার · A Brand of M-Tech</strong>
+<p>আশরাফ মার্কেট, পৌরসভা রোড, কেশবপুর, যশোর</p>
+<p>mtechcompanybd@gmail.com · +880 1912-751495</p>
+<small>সফটওয়্যার ধারণার নমুনা প্রদর্শনী।</small>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
