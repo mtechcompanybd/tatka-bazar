@@ -509,3 +509,117 @@ footer small {
   color: #16834a;
   font-weight: 600;
 }
+/* =================================
+   CUSTOMER APP
+================================= */
+
+[hidden] {
+    display: none !important;
+}
+
+.customer-welcome {
+    background: var(--secondary);
+    padding: 22px;
+    border-radius: 12px;
+    margin-bottom: 18px;
+}
+
+.customer-welcome h2 {
+    color: var(--primary-dark);
+    margin-bottom: 5px;
+}
+
+.customer-actions {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 18px 0;
+}
+
+.customer-actions button {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 10px;
+    color: var(--primary-dark);
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.customer-actions button:hover {
+    background: var(--secondary);
+    border-color: var(--primary);
+}
+
+.customer-panel {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.customer-panel label {
+    display: block;
+    margin: 13px 0 5px;
+    font-weight: 600;
+}
+
+.customer-panel input,
+.customer-panel select,
+.customer-panel textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font: inherit;
+    background: var(--white);
+}
+
+.customer-panel textarea {
+    min-height: 85px;
+    resize: vertical;
+}
+
+.customer-panel > button {
+    width: 100%;
+    padding: 12px;
+    margin-top: 15px;
+    border: none;
+    border-radius: 8px;
+    background: var(--primary);
+    color: var(--white);
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.customer-panel .address-panel {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid var(--border);
+    box-shadow: none;
+}
+
+.form-message {
+    margin-top: 12px;
+    color: var(--primary-dark);
+    font-weight: 600;
+    overflow-wrap: anywhere;
+}
+
+@media (max-width: 600px) {
+    .customer-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .customer-actions button {
+        text-align: left;
+        padding: 14px;
+    }
+
+    .customer-panel {
+        padding: 14px;
+    }
+}
