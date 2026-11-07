@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="bn">
 <head>
@@ -9,7 +8,7 @@
 <link rel="stylesheet" href="style.css">
 
 <style>
-/* অতিরিক্ত ডিজাইন: About, Team, Contact, Policies ও Footer */
+/* About, Team, Contact, Policies ও Footer */
 
 .info-section {
   padding: 45px 20px;
@@ -199,63 +198,6 @@
     padding: 18px;
   }
 }
-  
-/* About Us ও Management Team শর্টকাট কার্ড */
-
-.shortcut-section {
-  max-width: 1100px;
-  margin: 25px auto;
-  padding: 0 15px;
-}
-
-.shortcut-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 18px;
-}
-
-.shortcut-card {
-  display: block;
-  padding: 25px 20px;
-  background: #ffffff;
-  border: 1px solid #e1eee4;
-  border-radius: 14px;
-  text-decoration: none;
-  color: #176b3a;
-  box-shadow: 0 3px 12px rgba(0,0,0,.05);
-  transition: .2s;
-}
-
-.shortcut-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 18px rgba(0,0,0,.09);
-}
-
-.shortcut-card h3 {
-  margin: 0 0 8px;
-  font-size: 19px;
-}
-
-.shortcut-card p {
-  margin: 0;
-  color: #555;
-  line-height: 1.7;
-  font-size: 14px;
-}
-
-.shortcut-card span {
-  display: inline-block;
-  margin-top: 12px;
-  font-weight: bold;
-  font-size: 13px;
-}
-
-@media (max-width: 550px) {
-  .shortcut-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 </style>
 </head>
 
@@ -278,39 +220,17 @@
   <p>স্থানীয় বাজার থেকে পণ্য সংগ্রহ ও ঘরে পৌঁছে দেওয়ার ডিজিটাল সেবা।</p>
 </section>
 
+<!-- মূল মেনু: ৮টি ট্যাব -->
 <nav>
   <button class="active" data-tab="customer">গ্রাহক অ্যাপ</button>
   <button data-tab="partner">বাজার প্রতিনিধি</button>
   <button data-tab="admin">অ্যাডমিন</button>
   <button data-tab="accounts">হিসাব বিভাগ</button>
   <button data-tab="hr">HR</button>
+  <button data-tab="about">About Us</button>
+  <button data-tab="team">Management Team</button>
+  <button data-tab="contact">Contact Us</button>
 </nav>
-
-<!-- About Us ও Management Team কার্ড -->
-
-<section class="shortcut-section">
-  <div class="shortcut-grid">
-
-    <a href="#about" class="shortcut-card">
-      <h3>About Us</h3>
-      <p>
-        টাটকা বাজারের পরিচিতি, লক্ষ্য, উদ্দেশ্য
-        ও ভবিষ্যৎ পরিকল্পনা সম্পর্কে জানুন।
-      </p>
-      <span>বিস্তারিত জানুন →</span>
-    </a>
-
-    <a href="#team" class="shortcut-card">
-      <h3>Management Team</h3>
-      <p>
-        টাটকা বাজারের পরিচালনা ও ব্যবস্থাপনা
-        দলের সদস্যদের পরিচিতি দেখুন।
-      </p>
-      <span>টিম পরিচিতি দেখুন →</span>
-    </a>
-
-  </div>
-</section>
 
 <main>
 
@@ -446,124 +366,122 @@
   </div>
 </section>
 
-</main>
+<!-- ABOUT US: একই ট্যাবে তিনটি বিষয় -->
+<section id="about" class="screen">
 
-<hr class="page-divider">
+  <section class="info-section">
+    <h2>আমাদের সম্পর্কে</h2>
+    <p class="section-intro">
+      টাটকা বাজার একটি স্থানীয় বাজারভিত্তিক ডিজিটাল কেনাকাটা ও ডেলিভারি
+      সেবার উদ্যোগ। আমাদের লক্ষ্য হলো স্থানীয় বাজারের পণ্য সহজে গ্রাহকের
+      কাছে পৌঁছে দিতে প্রযুক্তির ব্যবহার করা।
+    </p>
 
-<!-- ABOUT US -->
-<section class="info-section" id="about">
-  <h2>আমাদের সম্পর্কে</h2>
-  <p class="section-intro">
-    টাটকা বাজার একটি স্থানীয় বাজারভিত্তিক ডিজিটাল কেনাকাটা ও ডেলিভারি
-    সেবার উদ্যোগ। আমাদের লক্ষ্য হলো স্থানীয় বাজারের পণ্য সহজে গ্রাহকের
-    কাছে পৌঁছে দিতে প্রযুক্তির ব্যবহার করা।
-  </p>
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>আমাদের পরিচয়</h3>
+        <p>
+          টাটকা বাজারের প্রাথমিক কার্যক্রম কেশবপুর, যশোরকে কেন্দ্র করে
+          পরিকল্পনা করা হয়েছে। গ্রাহক ও স্থানীয় বাজার প্রতিনিধির মধ্যে
+          সহজ যোগাযোগ এবং স্বচ্ছ কেনাকাটার অভিজ্ঞতা তৈরি করাই আমাদের উদ্দেশ্য।
+        </p>
+      </div>
 
-  <div class="info-grid">
-    <div class="info-card">
-      <h3>আমাদের পরিচয়</h3>
-      <p>
-        টাটকা বাজারের প্রাথমিক কার্যক্রম কেশবপুর, যশোরকে কেন্দ্র করে
-        পরিকল্পনা করা হয়েছে। গ্রাহক ও স্থানীয় বাজার প্রতিনিধির মধ্যে
-        সহজ যোগাযোগ এবং স্বচ্ছ কেনাকাটার অভিজ্ঞতা তৈরি করাই আমাদের উদ্দেশ্য।
-      </p>
+      <div class="info-card">
+        <h3>আমাদের লক্ষ্য</h3>
+        <p>
+          সময় ও ভোগান্তি কমিয়ে স্থানীয় বাজারের পণ্য গ্রাহকের কাছে পৌঁছে দেওয়া।
+          পণ্যের প্রকৃত দাম, কেনাকাটার তথ্য এবং সেবার চার্জ সম্পর্কে
+          গ্রাহককে পরিষ্কার ধারণা দেওয়া।
+        </p>
+      </div>
+
+      <div class="info-card">
+        <h3>আমাদের ভবিষ্যৎ পরিকল্পনা</h3>
+        <p>
+          কেশবপুর থেকে পরীক্ষামূলক কার্যক্রম শুরু করে সেবার মান, প্রযুক্তি
+          ও পরিচালন ব্যবস্থা উন্নত করা এবং সক্ষমতা অনুযায়ী ধাপে ধাপে
+          অন্যান্য এলাকায় সম্প্রসারণের পরিকল্পনা রয়েছে।
+        </p>
+      </div>
     </div>
 
-    <div class="info-card">
-      <h3>আমাদের লক্ষ্য</h3>
-      <p>
-        সময় ও ভোগান্তি কমিয়ে স্থানীয় বাজারের পণ্য গ্রাহকের কাছে পৌঁছে দেওয়া।
-        পণ্যের প্রকৃত দাম, কেনাকাটার তথ্য এবং সেবার চার্জ সম্পর্কে
-        গ্রাহককে পরিষ্কার ধারণা দেওয়া।
-      </p>
+    <div class="info-note">
+      <strong>বর্তমান অবস্থা:</strong>
+      এই ওয়েবসাইটটি একটি প্রাথমিক সফটওয়্যার ডেমো/পরীক্ষামূলক প্রদর্শনী।
+      এখানে দেখানো সব সুবিধা এখনো বাস্তব সেবা হিসেবে চালু নয়।
     </div>
+  </section>
 
-    <div class="info-card">
-      <h3>আমাদের ভবিষ্যৎ পরিকল্পনা</h3>
-      <p>
-        কেশবপুর থেকে পরীক্ষামূলক কার্যক্রম শুরু করে সেবার মান, প্রযুক্তি
-        ও পরিচালন ব্যবস্থা উন্নত করা এবং সক্ষমতা অনুযায়ী ধাপে ধাপে
-        অন্যান্য এলাকায় সম্প্রসারণের পরিকল্পনা রয়েছে।
-      </p>
+  <hr class="page-divider">
+
+  <!-- SERVICES -->
+  <section class="info-section" id="services">
+    <h2>আমাদের সেবাসমূহ</h2>
+    <p class="section-intro">
+      স্থানীয় বাজার থেকে প্রয়োজনীয় পণ্য সংগ্রহের পরিকল্পিত ডিজিটাল ব্যবস্থা।
+    </p>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>নিত্যপ্রয়োজনীয় পণ্য</h3>
+        <p>চাল, ডাল, তেল, লবণ, চিনি ও দৈনন্দিন প্রয়োজনীয় সামগ্রী।</p>
+      </div>
+
+      <div class="info-card">
+        <h3>শাকসবজি ও ফলমূল</h3>
+        <p>স্থানীয় বাজার থেকে তাজা শাকসবজি ও মৌসুমি ফল সংগ্রহের পরিকল্পনা।</p>
+      </div>
+
+      <div class="info-card">
+        <h3>মাছ ও অন্যান্য পণ্য</h3>
+        <p>গ্রাহকের চাহিদা অনুযায়ী মাছ এবং বাজারে পাওয়া অন্যান্য পণ্য।</p>
+      </div>
+
+      <div class="info-card">
+        <h3>মসলা ও ব্যক্তিগত পরিচর্যা</h3>
+        <p>রান্নার মসলা, প্রসাধনী ও ব্যক্তিগত পরিচর্যার প্রয়োজনীয় সামগ্রী।</p>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="info-note">
-    <strong>বর্তমান অবস্থা:</strong>
-    এই ওয়েবসাইটটি একটি প্রাথমিক সফটওয়্যার ডেমো/পরীক্ষামূলক প্রদর্শনী।
-    এখানে দেখানো সব সুবিধা এখনো বাস্তব সেবা হিসেবে চালু নয়।
-  </div>
+  <hr class="page-divider">
+
+  <!-- HOW IT WORKS -->
+  <section class="info-section" id="how-it-works">
+    <h2>যেভাবে কাজ করার পরিকল্পনা</h2>
+    <p class="section-intro">
+      গ্রাহকের অর্ডার থেকে পণ্য পৌঁছে দেওয়া পর্যন্ত প্রতিটি ধাপে স্বচ্ছতা
+      বজায় রাখার পরিকল্পনা রয়েছে।
+    </p>
+
+    <div class="info-grid">
+      <div class="info-card">
+        <h3>১. অর্ডার</h3>
+        <p>গ্রাহক প্রয়োজনীয় পণ্য ও পরিমাণ নির্বাচন করবেন।</p>
+      </div>
+
+      <div class="info-card">
+        <h3>২. বাজার সংগ্রহ</h3>
+        <p>নির্ধারিত প্রতিনিধি স্থানীয় বাজার থেকে পণ্য সংগ্রহ করবেন।</p>
+      </div>
+
+      <div class="info-card">
+        <h3>৩. দাম যাচাই</h3>
+        <p>সম্ভব হলে পণ্যের ছবি ও প্রকৃত ক্রয়মূল্য গ্রাহককে দেখানো হবে।</p>
+      </div>
+
+      <div class="info-card">
+        <h3>৪. ডেলিভারি</h3>
+        <p>গ্রাহকের অনুমোদন ও বিল চূড়ান্ত হওয়ার পর পণ্য পৌঁছে দেওয়ার ব্যবস্থা করা হবে।</p>
+      </div>
+    </div>
+  </section>
+
 </section>
-
-<hr class="page-divider">
-
-<!-- SERVICES -->
-<section class="info-section" id="services">
-  <h2>আমাদের সেবাসমূহ</h2>
-  <p class="section-intro">
-    স্থানীয় বাজার থেকে প্রয়োজনীয় পণ্য সংগ্রহের পরিকল্পিত ডিজিটাল ব্যবস্থা।
-  </p>
-
-  <div class="info-grid">
-    <div class="info-card">
-      <h3>নিত্যপ্রয়োজনীয় পণ্য</h3>
-      <p>চাল, ডাল, তেল, লবণ, চিনি ও দৈনন্দিন প্রয়োজনীয় সামগ্রী।</p>
-    </div>
-
-    <div class="info-card">
-      <h3>শাকসবজি ও ফলমূল</h3>
-      <p>স্থানীয় বাজার থেকে তাজা শাকসবজি ও মৌসুমি ফল সংগ্রহের পরিকল্পনা।</p>
-    </div>
-
-    <div class="info-card">
-      <h3>মাছ ও অন্যান্য পণ্য</h3>
-      <p>গ্রাহকের চাহিদা অনুযায়ী মাছ এবং বাজারে পাওয়া অন্যান্য পণ্য।</p>
-    </div>
-
-    <div class="info-card">
-      <h3>মসলা ও ব্যক্তিগত পরিচর্যা</h3>
-      <p>রান্নার মসলা, প্রসাধনী ও ব্যক্তিগত পরিচর্যার প্রয়োজনীয় সামগ্রী।</p>
-    </div>
-  </div>
-</section>
-
-<hr class="page-divider">
-
-<!-- HOW IT WORKS -->
-<section class="info-section" id="how-it-works">
-  <h2>যেভাবে কাজ করার পরিকল্পনা</h2>
-  <p class="section-intro">
-    গ্রাহকের অর্ডার থেকে পণ্য পৌঁছে দেওয়া পর্যন্ত প্রতিটি ধাপে স্বচ্ছতা
-    বজায় রাখার পরিকল্পনা রয়েছে।
-  </p>
-
-  <div class="info-grid">
-    <div class="info-card">
-      <h3>১. অর্ডার</h3>
-      <p>গ্রাহক প্রয়োজনীয় পণ্য ও পরিমাণ নির্বাচন করবেন।</p>
-    </div>
-
-    <div class="info-card">
-      <h3>২. বাজার সংগ্রহ</h3>
-      <p>নির্ধারিত প্রতিনিধি স্থানীয় বাজার থেকে পণ্য সংগ্রহ করবেন।</p>
-    </div>
-
-    <div class="info-card">
-      <h3>৩. দাম যাচাই</h3>
-      <p>সম্ভব হলে পণ্যের ছবি ও প্রকৃত ক্রয়মূল্য গ্রাহককে দেখানো হবে।</p>
-    </div>
-
-    <div class="info-card">
-      <h3>৪. ডেলিভারি</h3>
-      <p>গ্রাহকের অনুমোদন ও বিল চূড়ান্ত হওয়ার পর পণ্য পৌঁছে দেওয়ার ব্যবস্থা করা হবে।</p>
-    </div>
-  </div>
-</section>
-
-<hr class="page-divider">
 
 <!-- MANAGEMENT TEAM -->
-<section class="info-section" id="team">
+<section class="info-section screen" id="team">
   <h2>Management Team</h2>
   <p class="section-intro">
     টাটকা বাজারের পরিকল্পিত পরিচালনা ও ব্যবস্থাপনা দলের পরিচিতি।
@@ -609,10 +527,8 @@
   </div>
 </section>
 
-<hr class="page-divider">
-
 <!-- CONTACT US -->
-<section class="info-section" id="contact">
+<section class="info-section screen" id="contact">
   <h2>যোগাযোগ করুন</h2>
   <p class="section-intro">
     টাটকা বাজার সম্পর্কে জানতে, মতামত জানাতে অথবা সহযোগিতার জন্য যোগাযোগ করুন।
@@ -644,9 +560,11 @@
   </div>
 </section>
 
+</main>
+
+<!-- POLICIES: সব ট্যাবের নিচে -->
 <hr class="page-divider">
 
-<!-- POLICIES -->
 <section class="info-section" id="policies">
   <h2>নীতিমালা ও শর্তাবলি</h2>
   <p class="section-intro">
@@ -656,7 +574,6 @@
 
   <div class="policy-list">
 
-    <!-- PRIVACY POLICY -->
     <details id="privacy">
       <summary>১. Privacy Policy — গোপনীয়তা নীতি</summary>
       <div class="policy-content">
@@ -705,7 +622,6 @@
       </div>
     </details>
 
-    <!-- TERMS -->
     <details id="terms">
       <summary>২. Terms & Conditions — ব্যবহারের শর্তাবলি</summary>
       <div class="policy-content">
@@ -753,7 +669,6 @@
       </div>
     </details>
 
-    <!-- REFUND POLICY -->
     <details id="refund">
       <summary>৩. Refund & Replacement Policy — ফেরত ও পরিবর্তন নীতি</summary>
       <div class="policy-content">
@@ -800,7 +715,6 @@
       </div>
     </details>
 
-    <!-- SECURITY POLICY -->
     <details id="security">
       <summary>৪. Security & Data Protection Policy — নিরাপত্তা নীতি</summary>
       <div class="policy-content">
