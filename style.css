@@ -1,1 +1,443 @@
 
+/* =========================================
+   TATKA BAZAR - MAIN STYLESHEET
+   A Brand of M-Tech
+========================================= */
+
+/* 1. Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary: #16834a;
+    --primary-dark: #096438;
+    --secondary: #f1f8f3;
+    --background: #f7f9f8;
+    --text: #26352c;
+    --muted: #718078;
+    --border: #e1e9e3;
+    --white: #ffffff;
+    --warning: #fff4df;
+}
+
+/* 2. Body */
+body {
+    font-family: Arial, "Noto Sans Bengali", sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+/* 3. Header */
+header {
+    background: var(--white);
+    padding: 15px 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+    gap: 12px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.brand > b {
+    width: 45px;
+    height: 45px;
+    background: var(--primary);
+    color: var(--white);
+    border-radius: 12px;
+    display: grid;
+    place-items: center;
+    font-size: 25px;
+}
+
+.brand strong {
+    display: block;
+    font-size: 19px;
+}
+
+.brand small {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+header label {
+    background: #e6f5eb;
+    color: var(--primary-dark);
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+/* 4. Hero Section */
+.hero {
+    background: linear-gradient(
+        135deg,
+        #0d713d,
+        #20a35c
+    );
+    color: var(--white);
+    text-align: center;
+    padding: 55px 20px;
+}
+
+.hero h1 {
+    font-size: clamp(25px, 5vw, 42px);
+    line-height: 1.4;
+    margin: 12px 0;
+}
+
+.hero p {
+    font-size: 15px;
+    opacity: 0.95;
+}
+
+/* 5. Navigation */
+nav {
+    background: var(--white);
+    padding: 12px;
+    display: flex;
+    gap: 8px;
+    overflow-x: auto;
+    border-bottom: 1px solid var(--border);
+}
+
+nav button {
+    flex-shrink: 0;
+    border: 1px solid var(--border);
+    background: var(--white);
+    color: var(--text);
+    padding: 10px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+nav button.active {
+    background: var(--primary);
+    color: var(--white);
+    border-color: var(--primary);
+}
+
+/* 6. Main Layout */
+main {
+    max-width: 1150px;
+    margin: 25px auto;
+    padding: 0 18px;
+}
+
+h2 {
+    font-size: 24px;
+    margin-bottom: 18px;
+}
+
+h3 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+/* 7. Demo Notice */
+aside {
+    background: var(--warning);
+    border: 1px solid #f1dfb8;
+    padding: 14px;
+    border-radius: 10px;
+    margin-bottom: 22px;
+    font-size: 14px;
+}
+
+/* 8. Dashboard Screens */
+.screen {
+    display: none;
+}
+
+.screen.show {
+    display: block;
+}
+
+/* 9. Statistics Cards */
+.stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin: 20px 0;
+}
+
+.stats article {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px;
+    font-size: 13px;
+    color: var(--muted);
+}
+
+.stats article strong {
+    display: block;
+    font-size: 22px;
+    color: var(--primary);
+    margin-top: 7px;
+}
+
+/* 10. Search and Category Filters */
+.filters {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--white);
+    color: var(--text);
+    font-size: 14px;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--primary);
+}
+
+/* 11. Product Grid */
+.products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.product {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    transition: 0.2s;
+}
+
+.product:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+}
+
+.product > div:first-child {
+    font-size: 35px;
+    margin-bottom: 8px;
+}
+
+.product h3 {
+    margin-bottom: 4px;
+}
+
+.product small {
+    color: var(--muted);
+}
+
+.product .foot {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 8px;
+    margin-top: 14px;
+}
+
+.product .foot b {
+    color: var(--primary);
+}
+
+/* 12. Buttons */
+button {
+    font-family: inherit;
+}
+
+.product button,
+.panel button {
+    background: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 9px 13px;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+button:hover {
+    filter: brightness(0.95);
+}
+
+/* 13. General Panels */
+.panel {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+}
+
+.panel p {
+    margin: 8px 0;
+}
+
+.panel ul {
+    padding-left: 22px;
+}
+
+.panel li {
+    margin: 7px 0;
+}
+
+.total {
+    border-top: 1px solid var(--border);
+    padding-top: 12px;
+    margin-top: 15px;
+}
+
+.total b {
+    color: var(--primary);
+    font-size: 20px;
+}
+
+#msg {
+    color: var(--primary-dark);
+    margin-top: 10px;
+}
+
+/* 14. Tables */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 12px;
+    font-size: 13px;
+}
+
+th,
+td {
+    border-bottom: 1px solid var(--border);
+    padding: 12px 8px;
+    text-align: left;
+}
+
+th {
+    background: var(--secondary);
+    color: var(--primary-dark);
+}
+
+/* 15. Warning Text */
+.warning {
+    background: var(--warning);
+    padding: 10px;
+    border-radius: 7px;
+    color: #825c18;
+    font-size: 13px;
+}
+
+/* 16. Footer */
+footer {
+    background: #153b29;
+    color: var(--white);
+    text-align: center;
+    padding: 30px 15px;
+    margin-top: 45px;
+}
+
+footer p {
+    font-size: 13px;
+    margin: 5px 0;
+    opacity: 0.9;
+}
+
+footer small {
+    display: block;
+    margin-top: 12px;
+    opacity: 0.7;
+}
+
+/* 17. Tablet Responsive */
+@media (max-width: 768px) {
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero {
+        padding: 40px 15px;
+    }
+}
+
+/* 18. Mobile Responsive */
+@media (max-width: 480px) {
+    header {
+        padding: 12px;
+    }
+
+    .brand strong {
+        font-size: 16px;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .stats {
+        grid-template-columns: 1fr 1fr;
+        gap: 9px;
+    }
+
+    .stats article {
+        padding: 12px;
+    }
+
+    .stats article strong {
+        font-size: 18px;
+    }
+
+    .products {
+        grid-template-columns: 1fr 1fr;
+        gap: 9px;
+    }
+
+    .product {
+        padding: 11px;
+    }
+
+    .product h3 {
+        font-size: 15px;
+    }
+
+    .product .foot {
+        flex-wrap: wrap;
+    }
+
+    .filters {
+        flex-direction: column;
+    }
+
+    .panel {
+        padding: 14px;
+    }
+
+    table {
+        font-size: 11px;
+    }
+
+    th,
+    td {
+        padding: 8px 5px;
+    }
+}
+
