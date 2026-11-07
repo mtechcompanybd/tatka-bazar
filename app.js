@@ -186,8 +186,12 @@ areaNameSelect.addEventListener("change", function () {
   );
 });
 
+
 // ঠিকানা সংরক্ষণ
-document.querySelector("#saveAddress").addEventListener("click", function () {
+const saveAddressButton = document.querySelector("#saveAddress");
+
+saveAddressButton.addEventListener("click", function () {
+
   const address = {
     division: divisionSelect.value,
     district: districtSelect.value,
@@ -198,6 +202,8 @@ document.querySelector("#saveAddress").addEventListener("click", function () {
     details: document.querySelector("#addressDetails").value.trim()
   };
 
+  const message = document.querySelector("#addressMessage");
+
   if (
     !address.division ||
     !address.district ||
@@ -206,17 +212,30 @@ document.querySelector("#saveAddress").addEventListener("click", function () {
     !address.areaName ||
     !address.ward
   ) {
-    document.querySelector("#addressMessage").textContent =
+    message.textContent =
       "অনুগ্রহ করে ঠিকানার সব প্রয়োজনীয় তথ্য নির্বাচন করুন।";
     return;
   }
 
-  localStorage.setItem(
-    "tatkaBazarAddress",
-    JSON.stringify(address)
-  );
+  try {
+    localStorage.setItem(
+      "tatkaBazarAddress",
+      JSON.stringify(address)
+    );
 
-  document.querySelector("#addressMessage").textContent =
-    "আপনার ঠিকানা সফলভাবে সংরক্ষিত হয়েছে।";
+    const savedAddress = localStorage.getItem("tatkaBazarAddress");
+
+    if (savedAddress) {
+      message.textContent = "আপনার ঠিকানা সফলভাবে সংরক্ষিত হয়েছে!";
+      alert("ঠিকানা সফলভাবে সংরক্ষিত হয়েছে!");
+    } else {
+      message.textContent = "ঠিকানা সংরক্ষণ করা যায়নি।";
+    }
+
+  } catch (error) {
+    message.textContent =
+      "ঠিকানা সংরক্ষণে সমস্যা হয়েছে। আবার চেষ্টা করুন।";
+
+    console.error("Address save error:", error);
+  }
 });
-
