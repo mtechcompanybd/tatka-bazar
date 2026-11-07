@@ -98,3 +98,125 @@ document.querySelector("#order").onclick = () => {
 
 drawProducts();
 drawCart();
+
+// ===================================
+// ডেলিভারি ঠিকানা নির্বাচন ব্যবস্থা
+// ===================================
+
+const divisionSelect = document.querySelector("#division");
+const districtSelect = document.querySelector("#district");
+const upazilaSelect = document.querySelector("#upazila");
+const areaTypeSelect = document.querySelector("#areaType");
+const areaNameSelect = document.querySelector("#areaName");
+const wardSelect = document.querySelector("#ward");
+
+// ড্রপডাউনে তালিকা বসানোর ফাংশন
+function fillLocationSelect(select, items, placeholder) {
+  select.innerHTML = `<option value="">${placeholder}</option>`;
+
+  items.forEach(item => {
+    const option = document.createElement("option");
+    option.value = item;
+    option.textContent = item;
+    select.appendChild(option);
+  });
+
+  select.disabled = items.length === 0;
+}
+
+// বিভাগ নির্বাচন
+divisionSelect.addEventListener("change", function () {
+  const districts = Object.keys(locationData);
+
+  fillLocationSelect(
+    districtSelect,
+    this.value === "খুলনা" ? districts : [],
+    "জেলা নির্বাচন করুন"
+  );
+
+  fillLocationSelect(upazilaSelect, [], "উপজেলা নির্বাচন করুন");
+  fillLocationSelect(areaNameSelect, [], "আগে উপজেলা নির্বাচন করুন");
+  fillLocationSelect(wardSelect, [], "আগে এলাকা নির্বাচন করুন");
+});
+
+// জেলা নির্বাচন
+districtSelect.addEventListener("change", function () {
+  const upazilas = locationData[this.value] || [];
+
+  fillLocationSelect(
+    upazilaSelect,
+    upazilas,
+    "উপজেলা নির্বাচন করুন"
+  );
+
+  fillLocationSelect(areaNameSelect, [], "আগে উপজেলা নির্বাচন করুন");
+  fillLocationSelect(wardSelect, [], "আগে এলাকা নির্বাচন করুন");
+});
+
+// ইউনিয়ন / পৌরসভা তালিকা দেখানো
+function updateAreaList() {
+  const upazila = upazilaSelect.value;
+  const areaType = areaTypeSelect.value;
+
+  const areas = areaData[upazila]?.[areaType] || [];
+
+  fillLocationSelect(
+    areaNameSelect,
+    areas,
+    areas.length ? "এলাকা নির্বাচন করুন" : "তালিকা এখনো যোগ করা হয়নি"
+  );
+
+  fillLocationSelect(wardSelect, [], "আগে এলাকা নির্বাচন করুন");
+}
+
+// উপজেলা নির্বাচন
+upazilaSelect.addEventListener("change", updateAreaList);
+
+// এলাকার ধরন নির্বাচন
+areaTypeSelect.addEventListener("change", updateAreaList);
+
+// এলাকা নির্বাচন করলে ওয়ার্ড দেখানো
+areaNameSelect.addEventListener("change", function () {
+  const wards = Array.from({ length: 9 }, (_, i) => String(i + 1));
+
+  fillLocationSelect(
+    wardSelect,
+    this.value ? wards : [],
+    "ওয়ার্ড নির্বাচন করুন"
+  );
+});
+
+// ঠিকানা সংরক্ষণ
+document.querySelector("#saveAddress").addEventListener("click", function () {
+  const address = {
+    division: divisionSelect.value,
+    district: districtSelect.value,
+    upazila: upazilaSelect.value,
+    areaType: areaTypeSelect.value,
+    areaName: areaNameSelect.value,
+    ward: wardSelect.value,
+    details: document.querySelector("#addressDetails").value.trim()
+  };
+
+  if (
+    !address.division ||
+    !address.district ||
+    !address.upazila ||
+    !address.areaType ||
+    !address.areaName ||
+    !address.ward
+  ) {
+    document.querySelector("#addressMessage").textContent =
+      "অনুগ্রহ করে ঠিকানার সব প্রয়োজনীয় তথ্য নির্বাচন করুন।";
+    return;
+  }
+
+  localStorage.setItem(
+    "tatkaBazarAddress",
+    JSON.stringify(address)
+  );
+
+  document.querySelector("#addressMessage").textContent =
+    "আপনার ঠিকানা সফলভাবে সংরক্ষিত হয়েছে।";
+});
+
