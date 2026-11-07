@@ -243,6 +243,48 @@
 <section id="customer" class="screen show">
   <h2>আজকের বাজার</h2>
 
+  <!-- ডেলিভারি ঠিকানা -->
+  <div class="address-panel">
+    <h2>📍 ডেলিভারি ঠিকানা</h2>
+    <p>আপনার এলাকার তথ্য নির্বাচন করুন</p>
+
+    <label>বিভাগ</label>
+    <select id="division">
+      <option value="">বিভাগ নির্বাচন করুন</option>
+      <option value="খুলনা">খুলনা বিভাগ</option>
+    </select>
+
+    <label>জেলা</label>
+    <select id="district" disabled>
+      <option value="">আগে বিভাগ নির্বাচন করুন</option>
+    </select>
+
+    <label>উপজেলা / থানা</label>
+    <select id="upazila" disabled>
+      <option value="">আগে জেলা নির্বাচন করুন</option>
+    </select>
+
+    <label>এলাকার ধরন</label>
+    <select id="areaType">
+      <option value="">নির্বাচন করুন</option>
+      <option value="ইউনিয়ন">ইউনিয়ন</option>
+      <option value="পৌরসভা">পৌরসভা</option>
+      <option value="সিটি কর্পোরেশন">সিটি কর্পোরেশন</option>
+    </select>
+
+    <label id="areaLabel">ইউনিয়ন / পৌরসভার নাম</label>
+    <input id="areaName" type="text" placeholder="এলাকার নাম লিখুন">
+
+    <label>ওয়ার্ড নম্বর</label>
+    <input id="ward" type="number" min="1" placeholder="ওয়ার্ড নম্বর লিখুন">
+
+    <label>বাড়ি / রাস্তা / পরিচিত স্থান</label>
+    <textarea id="addressDetails" placeholder="বাড়ির ঠিকানা লিখুন"></textarea>
+
+    <button type="button" id="saveAddress">ঠিকানা সংরক্ষণ করুন</button>
+    <p id="addressMessage"></p>
+  </div>
+
   <div class="stats">
     <article>নমুনা পণ্য<strong>১২টি</strong></article>
     <article>সেবা চার্জ<strong>৫%</strong></article>
