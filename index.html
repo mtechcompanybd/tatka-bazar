@@ -199,6 +199,63 @@
     padding: 18px;
   }
 }
+  
+/* About Us ও Management Team শর্টকাট কার্ড */
+
+.shortcut-section {
+  max-width: 1100px;
+  margin: 25px auto;
+  padding: 0 15px;
+}
+
+.shortcut-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+
+.shortcut-card {
+  display: block;
+  padding: 25px 20px;
+  background: #ffffff;
+  border: 1px solid #e1eee4;
+  border-radius: 14px;
+  text-decoration: none;
+  color: #176b3a;
+  box-shadow: 0 3px 12px rgba(0,0,0,.05);
+  transition: .2s;
+}
+
+.shortcut-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,.09);
+}
+
+.shortcut-card h3 {
+  margin: 0 0 8px;
+  font-size: 19px;
+}
+
+.shortcut-card p {
+  margin: 0;
+  color: #555;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.shortcut-card span {
+  display: inline-block;
+  margin-top: 12px;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+@media (max-width: 550px) {
+  .shortcut-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 </style>
 </head>
 
