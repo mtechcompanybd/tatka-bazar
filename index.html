@@ -273,10 +273,14 @@
     </select>
 
     <label id="areaLabel">ইউনিয়ন / পৌরসভার নাম</label>
-    <input id="areaName" type="text" placeholder="এলাকার নাম লিখুন">
+    <select id="areaName" disabled>
+  <option value="">আগে উপজেলা নির্বাচন করুন</option>
+</select>
 
     <label>ওয়ার্ড নম্বর</label>
-    <input id="ward" type="number" min="1" placeholder="ওয়ার্ড নম্বর লিখুন">
+    <select id="ward" disabled>
+  <option value="">আগে ইউনিয়ন / পৌরসভা নির্বাচন করুন</option>
+</select>
 
     <label>বাড়ি / রাস্তা / পরিচিত স্থান</label>
     <textarea id="addressDetails" placeholder="বাড়ির ঠিকানা লিখুন"></textarea>
