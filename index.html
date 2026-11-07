@@ -1,11 +1,207 @@
+
 <!DOCTYPE html>
 <html lang="bn">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>টাটকা বাজার - Public Demo</title>
+<meta name="description" content="টাটকা বাজার — কেশবপুর, যশোরের স্থানীয় বাজারভিত্তিক ডিজিটাল কেনাকাটা ও ডেলিভারি সেবার পাবলিক ডেমো।">
+<title>টাটকা বাজার | Public Demo</title>
 <link rel="stylesheet" href="style.css">
+
+<style>
+/* অতিরিক্ত ডিজাইন: About, Team, Contact, Policies ও Footer */
+
+.info-section {
+  padding: 45px 20px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.info-section h2 {
+  text-align: center;
+  margin-bottom: 12px;
+  color: #176b3a;
+}
+
+.section-intro {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 28px;
+  line-height: 1.8;
+  color: #555;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.info-card {
+  background: #fff;
+  border: 1px solid #e5eee7;
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 3px 12px rgba(0,0,0,.045);
+}
+
+.info-card h3 {
+  color: #176b3a;
+  margin-top: 0;
+}
+
+.info-card p,
+.info-card li {
+  line-height: 1.8;
+  color: #444;
+}
+
+.info-card ul {
+  padding-left: 20px;
+}
+
+.team-card {
+  text-align: center;
+}
+
+.team-card .team-icon {
+  width: 62px;
+  height: 62px;
+  margin: 0 auto 12px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #e8f5eb;
+  color: #176b3a;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.team-card h3 {
+  margin-bottom: 5px;
+}
+
+.team-role {
+  color: #666;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.team-phone,
+.contact-link {
+  color: #176b3a;
+  text-decoration: none;
+  font-weight: bold;
+  overflow-wrap: anywhere;
+}
+
+.team-phone:hover,
+.contact-link:hover {
+  text-decoration: underline;
+}
+
+.contact-panel {
+  background: #f0f8f2;
+  border: 1px solid #d9ebdd;
+  border-radius: 16px;
+  padding: 25px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.contact-item h3 {
+  color: #176b3a;
+  margin-bottom: 8px;
+}
+
+.policy-list {
+  display: grid;
+  gap: 12px;
+}
+
+.policy-list details {
+  background: #fff;
+  border: 1px solid #e1e9e3;
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+
+.policy-list summary {
+  color: #176b3a;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 1.6;
+}
+
+.policy-content {
+  padding-top: 12px;
+  color: #444;
+  line-height: 1.85;
+}
+
+.policy-content h4 {
+  color: #176b3a;
+  margin-bottom: 5px;
+}
+
+.policy-content ul {
+  padding-left: 22px;
+}
+
+.info-note {
+  background: #fff8e7;
+  border-left: 4px solid #e5a62c;
+  padding: 13px 16px;
+  border-radius: 7px;
+  line-height: 1.7;
+  color: #604b20;
+  margin-top: 20px;
+}
+
+.quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px 22px;
+  margin: 18px 0;
+}
+
+.quick-links a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.quick-links a:hover {
+  text-decoration: underline;
+}
+
+.page-divider {
+  border: 0;
+  border-top: 1px solid #e5eee7;
+  margin: 0;
+}
+
+.footer-contact a {
+  color: inherit;
+}
+
+@media (max-width: 600px) {
+  .info-section {
+    padding: 32px 14px;
+  }
+
+  .info-card {
+    padding: 18px;
+  }
+
+  .contact-panel {
+    padding: 18px;
+  }
+}
+</style>
 </head>
+
 <body>
 
 <header>
@@ -34,113 +230,584 @@
 </nav>
 
 <main>
+
 <aside>
-<strong>ডেমো নোট:</strong>
-এখানে প্রদর্শিত সব তথ্য ও হিসাব নমুনা। বাস্তব অর্ডার বা পেমেন্ট চালু নেই।
+  <strong>ডেমো নোট:</strong>
+  এখানে প্রদর্শিত সব তথ্য ও হিসাব নমুনা। বাস্তব অর্ডার বা পেমেন্ট চালু নেই।
 </aside>
 
+<!-- গ্রাহক অ্যাপ -->
 <section id="customer" class="screen show">
-<h2>আজকের বাজার</h2>
-<div class="stats">
-<article>নমুনা পণ্য<strong>১২টি</strong></article>
-<article>সেবা চার্জ<strong>৫%</strong></article>
-<article>সেবা এলাকা<strong>কেশবপুর</strong></article>
-</div>
+  <h2>আজকের বাজার</h2>
 
-<div class="filters">
-<input id="q" placeholder="পণ্য খুঁজুন">
-<select id="cat">
-<option value="all">সব ক্যাটাগরি</option>
-<option>নিত্যপ্রয়োজনীয়</option>
-<option>শাকসবজি</option>
-<option>মাছ</option>
-<option>মসলা</option>
-</select>
-</div>
+  <div class="stats">
+    <article>নমুনা পণ্য<strong>১২টি</strong></article>
+    <article>সেবা চার্জ<strong>৫%</strong></article>
+    <article>সেবা এলাকা<strong>কেশবপুর</strong></article>
+  </div>
 
-<div id="products" class="products"></div>
+  <div class="filters">
+    <input id="q" placeholder="পণ্য খুঁজুন">
+    <select id="cat">
+      <option value="all">সব ক্যাটাগরি</option>
+      <option>নিত্যপ্রয়োজনীয়</option>
+      <option>শাকসবজি</option>
+      <option>মাছ</option>
+      <option>মসলা</option>
+    </select>
+  </div>
 
-<div class="panel">
-<h3>আপনার বাজারের তালিকা</h3>
-<div id="cart">পণ্য যোগ করলে এখানে দেখা যাবে।</div>
-<p class="total">আনুমানিক মোট: <b id="total">৳০</b></p>
-<button id="order">নমুনা অর্ডার দেখুন</button>
-<p id="msg"></p>
-</div>
+  <div id="products" class="products"></div>
+
+  <div class="panel">
+    <h3>আপনার বাজারের তালিকা</h3>
+    <div id="cart">পণ্য যোগ করলে এখানে দেখা যাবে।</div>
+    <p class="total">আনুমানিক মোট: <b id="total">৳০</b></p>
+    <button id="order">নমুনা অর্ডার দেখুন</button>
+    <p id="msg"></p>
+  </div>
 </section>
 
+<!-- বাজার প্রতিনিধি -->
 <section id="partner" class="screen">
-<h2>বাজার প্রতিনিধির ড্যাশবোর্ড</h2>
-<div class="stats">
-<article>আজ বরাদ্দ<strong>০৩</strong></article>
-<article>কেনাকাটা চলছে<strong>০১</strong></article>
-<article>ডেলিভারি বাকি<strong>০২</strong></article>
-</div>
-<div class="panel">
-<h3>নমুনা অর্ডার #TB-1024</h3>
-<p>গ্রাহক: রহিমা খাতুন (ডেমো)</p>
-<p>এলাকা: কেশবপুর পৌরসভা, ৩ নং ওয়ার্ড</p>
-<p>পণ্য: আলু ২ কেজি, টমেটো ১ কেজি, রুই মাছ ১ কেজি</p>
-<p>ধাপ: অর্ডার গ্রহণ → বাজার করা → ছবি/দাম আপলোড → অনুমোদন → ডেলিভারি</p>
-</div>
+  <h2>বাজার প্রতিনিধির ড্যাশবোর্ড</h2>
+
+  <div class="stats">
+    <article>আজ বরাদ্দ<strong>০৩</strong></article>
+    <article>কেনাকাটা চলছে<strong>০১</strong></article>
+    <article>ডেলিভারি বাকি<strong>০২</strong></article>
+  </div>
+
+  <div class="panel">
+    <h3>নমুনা অর্ডার #TB-1024</h3>
+    <p>গ্রাহক: রহিমা খাতুন (ডেমো)</p>
+    <p>এলাকা: কেশবপুর পৌরসভা, ৩ নং ওয়ার্ড</p>
+    <p>পণ্য: আলু ২ কেজি, টমেটো ১ কেজি, রুই মাছ ১ কেজি</p>
+    <p>ধাপ: অর্ডার গ্রহণ → বাজার করা → ছবি/দাম আপলোড → অনুমোদন → ডেলিভারি</p>
+  </div>
 </section>
 
+<!-- অ্যাডমিন -->
 <section id="admin" class="screen">
-<h2>অ্যাডমিন প্যানেল</h2>
-<div class="stats">
-<article>নমুনা অর্ডার<strong>২৪</strong></article>
-<article>সক্রিয় প্রতিনিধি<strong>০৮</strong></article>
-<article>সেবা এলাকা<strong>০১ উপজেলা</strong></article>
-</div>
-<div class="panel">
-<h3>অর্ডার ব্যবস্থাপনা</h3>
-<table>
-<tr><th>অর্ডার</th><th>এলাকা</th><th>অবস্থা</th><th>মূল্য</th></tr>
-<tr><td>TB-1024</td><td>৩ নং ওয়ার্ড</td><td>কেনাকাটা চলছে</td><td>৳৮৫০</td></tr>
-<tr><td>TB-1025</td><td>৫ নং ওয়ার্ড</td><td>অনুমোদনের অপেক্ষায়</td><td>৳১,২৩০</td></tr>
-<tr><td>TB-1026</td><td>২ নং ওয়ার্ড</td><td>ডেলিভারি সম্পন্ন</td><td>৳৬৭০</td></tr>
-</table>
-</div>
+  <h2>অ্যাডমিন প্যানেল</h2>
+
+  <div class="stats">
+    <article>নমুনা অর্ডার<strong>২৪</strong></article>
+    <article>সক্রিয় প্রতিনিধি<strong>০৮</strong></article>
+    <article>সেবা এলাকা<strong>০১ উপজেলা</strong></article>
+  </div>
+
+  <div class="panel">
+    <h3>অর্ডার ব্যবস্থাপনা</h3>
+    <table>
+      <tr>
+        <th>অর্ডার</th>
+        <th>এলাকা</th>
+        <th>অবস্থা</th>
+        <th>মূল্য</th>
+      </tr>
+      <tr>
+        <td>TB-1024</td>
+        <td>৩ নং ওয়ার্ড</td>
+        <td>কেনাকাটা চলছে</td>
+        <td>৳৮৫০</td>
+      </tr>
+      <tr>
+        <td>TB-1025</td>
+        <td>৫ নং ওয়ার্ড</td>
+        <td>অনুমোদনের অপেক্ষায়</td>
+        <td>৳১,২৩০</td>
+      </tr>
+      <tr>
+        <td>TB-1026</td>
+        <td>২ নং ওয়ার্ড</td>
+        <td>ডেলিভারি সম্পন্ন</td>
+        <td>৳৬৭০</td>
+      </tr>
+    </table>
+  </div>
 </section>
 
+<!-- হিসাব বিভাগ -->
 <section id="accounts" class="screen">
-<h2>হিসাব ও অর্থ বিভাগ</h2>
-<div class="stats">
-<article>নমুনা পণ্য মূল্য<strong>৳২৭,৫০০</strong></article>
-<article>নমুনা সেবা আয়<strong>৳১,৩৭৫</strong></article>
-<article>নমুনা ব্যয়<strong>৳৪,২০০</strong></article>
-</div>
-<div class="panel">
-<h3>হিসাবের নীতি</h3>
-<ul>
-<li>গ্রাহকের অগ্রিম জমা আলাদা লেজারে থাকবে।</li>
-<li>পণ্য ও সেবা সম্পন্ন হওয়ার পর প্রকৃত আয়-ব্যয় হিসাব হবে।</li>
-<li>পণ্য ক্রয়, সেবা চার্জ, পরিবহন ও রিফান্ড পৃথকভাবে রেকর্ড হবে।</li>
-</ul>
-<p class="warning">সংখ্যাগুলো নমুনা, প্রকৃত আয় বা মুনাফা নয়।</p>
-</div>
+  <h2>হিসাব ও অর্থ বিভাগ</h2>
+
+  <div class="stats">
+    <article>নমুনা পণ্য মূল্য<strong>৳২৭,৫০০</strong></article>
+    <article>নমুনা সেবা আয়<strong>৳১,৩৭৫</strong></article>
+    <article>নমুনা ব্যয়<strong>৳৪,২০০</strong></article>
+  </div>
+
+  <div class="panel">
+    <h3>হিসাবের নীতি</h3>
+    <ul>
+      <li>গ্রাহকের অগ্রিম জমা আলাদা লেজারে থাকবে।</li>
+      <li>পণ্য ও সেবা সম্পন্ন হওয়ার পর প্রকৃত আয়-ব্যয় হিসাব হবে।</li>
+      <li>পণ্য ক্রয়, সেবা চার্জ, পরিবহন ও রিফান্ড পৃথকভাবে রেকর্ড হবে।</li>
+    </ul>
+    <p class="warning">সংখ্যাগুলো নমুনা, প্রকৃত আয় বা মুনাফা নয়।</p>
+  </div>
 </section>
 
+<!-- HR -->
 <section id="hr" class="screen">
-<h2>মানবসম্পদ ব্যবস্থাপনা</h2>
-<div class="panel">
-<h3>নমুনা টিম কাঠামো</h3>
-<p><b>Founder & CEO</b> — ব্যবসায়িক কৌশল ও তদারকি</p>
-<p><b>Co-Founder & COO</b> — অপারেশন ও প্রতিনিধি সমন্বয়</p>
-<p><b>Delivery / Operations</b> — সংগ্রহ ও ডেলিভারি</p>
-<p><b>Accounts & Finance</b> — আর্থিক প্রতিবেদন</p>
-<p><b>Digital Marketing & Sales</b> — গ্রাহক ও প্রচারণা</p>
-</div>
+  <h2>মানবসম্পদ ব্যবস্থাপনা</h2>
+
+  <div class="panel">
+    <h3>নমুনা টিম কাঠামো</h3>
+    <p><b>Founder & CEO</b> — ব্যবসায়িক কৌশল ও তদারকি</p>
+    <p><b>Co-Founder & COO</b> — অপারেশন ও প্রতিনিধি সমন্বয়</p>
+    <p><b>Delivery / Operations</b> — সংগ্রহ ও ডেলিভারি</p>
+    <p><b>Accounts & Finance</b> — আর্থিক প্রতিবেদন</p>
+    <p><b>Digital Marketing & Sales</b> — গ্রাহক ও প্রচারণা</p>
+  </div>
 </section>
+
 </main>
 
-<footer>
-<strong>টাটকা বাজার · A Brand of M-Tech</strong>
-<p>আশরাফ মার্কেট, পৌরসভা রোড, কেশবপুর, যশোর</p>
-<p>mtechcompanybd@gmail.com · +880 1912-751495</p>
-<small>সফটওয়্যার ধারণার নমুনা প্রদর্শনী।</small>
+<hr class="page-divider">
+
+<!-- ABOUT US -->
+<section class="info-section" id="about">
+  <h2>আমাদের সম্পর্কে</h2>
+  <p class="section-intro">
+    টাটকা বাজার একটি স্থানীয় বাজারভিত্তিক ডিজিটাল কেনাকাটা ও ডেলিভারি
+    সেবার উদ্যোগ। আমাদের লক্ষ্য হলো স্থানীয় বাজারের পণ্য সহজে গ্রাহকের
+    কাছে পৌঁছে দিতে প্রযুক্তির ব্যবহার করা।
+  </p>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>আমাদের পরিচয়</h3>
+      <p>
+        টাটকা বাজারের প্রাথমিক কার্যক্রম কেশবপুর, যশোরকে কেন্দ্র করে
+        পরিকল্পনা করা হয়েছে। গ্রাহক ও স্থানীয় বাজার প্রতিনিধির মধ্যে
+        সহজ যোগাযোগ এবং স্বচ্ছ কেনাকাটার অভিজ্ঞতা তৈরি করাই আমাদের উদ্দেশ্য।
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>আমাদের লক্ষ্য</h3>
+      <p>
+        সময় ও ভোগান্তি কমিয়ে স্থানীয় বাজারের পণ্য গ্রাহকের কাছে পৌঁছে দেওয়া।
+        পণ্যের প্রকৃত দাম, কেনাকাটার তথ্য এবং সেবার চার্জ সম্পর্কে
+        গ্রাহককে পরিষ্কার ধারণা দেওয়া।
+      </p>
+    </div>
+
+    <div class="info-card">
+      <h3>আমাদের ভবিষ্যৎ পরিকল্পনা</h3>
+      <p>
+        কেশবপুর থেকে পরীক্ষামূলক কার্যক্রম শুরু করে সেবার মান, প্রযুক্তি
+        ও পরিচালন ব্যবস্থা উন্নত করা এবং সক্ষমতা অনুযায়ী ধাপে ধাপে
+        অন্যান্য এলাকায় সম্প্রসারণের পরিকল্পনা রয়েছে।
+      </p>
+    </div>
+  </div>
+
+  <div class="info-note">
+    <strong>বর্তমান অবস্থা:</strong>
+    এই ওয়েবসাইটটি একটি প্রাথমিক সফটওয়্যার ডেমো/পরীক্ষামূলক প্রদর্শনী।
+    এখানে দেখানো সব সুবিধা এখনো বাস্তব সেবা হিসেবে চালু নয়।
+  </div>
+</section>
+
+<hr class="page-divider">
+
+<!-- SERVICES -->
+<section class="info-section" id="services">
+  <h2>আমাদের সেবাসমূহ</h2>
+  <p class="section-intro">
+    স্থানীয় বাজার থেকে প্রয়োজনীয় পণ্য সংগ্রহের পরিকল্পিত ডিজিটাল ব্যবস্থা।
+  </p>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>নিত্যপ্রয়োজনীয় পণ্য</h3>
+      <p>চাল, ডাল, তেল, লবণ, চিনি ও দৈনন্দিন প্রয়োজনীয় সামগ্রী।</p>
+    </div>
+
+    <div class="info-card">
+      <h3>শাকসবজি ও ফলমূল</h3>
+      <p>স্থানীয় বাজার থেকে তাজা শাকসবজি ও মৌসুমি ফল সংগ্রহের পরিকল্পনা।</p>
+    </div>
+
+    <div class="info-card">
+      <h3>মাছ ও অন্যান্য পণ্য</h3>
+      <p>গ্রাহকের চাহিদা অনুযায়ী মাছ এবং বাজারে পাওয়া অন্যান্য পণ্য।</p>
+    </div>
+
+    <div class="info-card">
+      <h3>মসলা ও ব্যক্তিগত পরিচর্যা</h3>
+      <p>রান্নার মসলা, প্রসাধনী ও ব্যক্তিগত পরিচর্যার প্রয়োজনীয় সামগ্রী।</p>
+    </div>
+  </div>
+</section>
+
+<hr class="page-divider">
+
+<!-- HOW IT WORKS -->
+<section class="info-section" id="how-it-works">
+  <h2>যেভাবে কাজ করার পরিকল্পনা</h2>
+  <p class="section-intro">
+    গ্রাহকের অর্ডার থেকে পণ্য পৌঁছে দেওয়া পর্যন্ত প্রতিটি ধাপে স্বচ্ছতা
+    বজায় রাখার পরিকল্পনা রয়েছে।
+  </p>
+
+  <div class="info-grid">
+    <div class="info-card">
+      <h3>১. অর্ডার</h3>
+      <p>গ্রাহক প্রয়োজনীয় পণ্য ও পরিমাণ নির্বাচন করবেন।</p>
+    </div>
+
+    <div class="info-card">
+      <h3>২. বাজার সংগ্রহ</h3>
+      <p>নির্ধারিত প্রতিনিধি স্থানীয় বাজার থেকে পণ্য সংগ্রহ করবেন।</p>
+    </div>
+
+    <div class="info-card">
+      <h3>৩. দাম যাচাই</h3>
+      <p>সম্ভব হলে পণ্যের ছবি ও প্রকৃত ক্রয়মূল্য গ্রাহককে দেখানো হবে।</p>
+    </div>
+
+    <div class="info-card">
+      <h3>৪. ডেলিভারি</h3>
+      <p>গ্রাহকের অনুমোদন ও বিল চূড়ান্ত হওয়ার পর পণ্য পৌঁছে দেওয়ার ব্যবস্থা করা হবে।</p>
+    </div>
+  </div>
+</section>
+
+<hr class="page-divider">
+
+<!-- MANAGEMENT TEAM -->
+<section class="info-section" id="team">
+  <h2>Management Team</h2>
+  <p class="section-intro">
+    টাটকা বাজারের পরিকল্পিত পরিচালনা ও ব্যবস্থাপনা দলের পরিচিতি।
+  </p>
+
+  <div class="info-grid">
+
+    <div class="info-card team-card">
+      <div class="team-icon">স</div>
+      <h3>সুমাইয়া আক্তার</h3>
+      <p class="team-role">Founder & CEO</p>
+      <a class="team-phone" href="tel:+8801912751495">+880 1912-751495</a>
+    </div>
+
+    <div class="info-card team-card">
+      <div class="team-icon">জ</div>
+      <h3>মোঃ জিনারুল ইসলাম</h3>
+      <p class="team-role">Co-Founder & COO</p>
+      <a class="team-phone" href="tel:+8801911786336">+880 1911-786336</a>
+    </div>
+
+    <div class="info-card team-card">
+      <div class="team-icon">প</div>
+      <h3>শেখ পারভেজ মাহমুদ</h3>
+      <p class="team-role">Delivery / Operations Manager</p>
+      <a class="team-phone" href="tel:+8801912709914">+880 1912-709914</a>
+    </div>
+
+    <div class="info-card team-card">
+      <div class="team-icon">হ</div>
+      <h3>হাসিবুর রহমান</h3>
+      <p class="team-role">Accounts & Finance Executive</p>
+      <a class="team-phone" href="tel:+8801309519775">+880 1309-519775</a>
+    </div>
+
+    <div class="info-card team-card">
+      <div class="team-icon">M</div>
+      <h3>Maria Sultana</h3>
+      <p class="team-role">Digital Marketing & Sales Executive</p>
+      <a class="team-phone" href="tel:+8801910896121">+880 1910-896121</a>
+    </div>
+
+  </div>
+</section>
+
+<hr class="page-divider">
+
+<!-- CONTACT US -->
+<section class="info-section" id="contact">
+  <h2>যোগাযোগ করুন</h2>
+  <p class="section-intro">
+    টাটকা বাজার সম্পর্কে জানতে, মতামত জানাতে অথবা সহযোগিতার জন্য যোগাযোগ করুন।
+  </p>
+
+  <div class="contact-panel">
+
+    <div class="contact-item">
+      <h3>হেল্পলাইন</h3>
+      <p>শেখ পারভেজ মাহমুদ</p>
+      <a class="contact-link" href="tel:+8801912709914">
+        +880 1912-709914
+      </a>
+    </div>
+
+    <div class="contact-item">
+      <h3>ইমেইল</h3>
+      <p>আমাদের ইমেইল করুন</p>
+      <a class="contact-link" href="mailto:mtechcompanybd@gmail.com">
+        mtechcompanybd@gmail.com
+      </a>
+    </div>
+
+    <div class="contact-item">
+      <h3>ঠিকানা</h3>
+      <p>আশরাফ মার্কেট, পৌরসভা রোড, কেশবপুর, যশোর, বাংলাদেশ।</p>
+    </div>
+
+  </div>
+</section>
+
+<hr class="page-divider">
+
+<!-- POLICIES -->
+<section class="info-section" id="policies">
+  <h2>নীতিমালা ও শর্তাবলি</h2>
+  <p class="section-intro">
+    ব্যবহারকারীর তথ্য, সেবা গ্রহণ, পণ্য ফেরত এবং তথ্য সুরক্ষা বিষয়ে
+    আমাদের প্রাথমিক নীতিমালার খসড়া।
+  </p>
+
+  <div class="policy-list">
+
+    <!-- PRIVACY POLICY -->
+    <details id="privacy">
+      <summary>১. Privacy Policy — গোপনীয়তা নীতি</summary>
+      <div class="policy-content">
+
+        <h4>তথ্য সংগ্রহ</h4>
+        <p>
+          সেবা প্রদানের প্রয়োজন অনুযায়ী গ্রাহকের নাম, মোবাইল নম্বর,
+          ডেলিভারি ঠিকানা, অর্ডারের বিবরণ এবং যোগাযোগের তথ্য সংগ্রহ
+          করা হতে পারে।
+        </p>
+
+        <h4>তথ্যের ব্যবহার</h4>
+        <ul>
+          <li>অর্ডার গ্রহণ ও ডেলিভারি সমন্বয়।</li>
+          <li>গ্রাহকের সঙ্গে যোগাযোগ ও সেবার আপডেট দেওয়া।</li>
+          <li>অভিযোগ, রিফান্ড ও গ্রাহকসেবা পরিচালনা।</li>
+          <li>সেবার মান উন্নত করা।</li>
+        </ul>
+
+        <h4>জাতীয় পরিচয়পত্র (NID)</h4>
+        <p>
+          প্রাথমিক পর্যায়ে সাধারণ গ্রাহক নিবন্ধনের জন্য NID বাধ্যতামূলক
+          করার পরিকল্পনা নেই। বিশেষ কোনো আইনগত বা নিরাপত্তাজনিত
+          প্রয়োজন দেখা দিলে প্রযোজ্য নিয়ম অনুসরণ করা হবে।
+        </p>
+
+        <h4>তথ্য শেয়ার</h4>
+        <p>
+          অর্ডার সম্পন্ন করার জন্য প্রয়োজনীয় সীমিত তথ্য সংশ্লিষ্ট
+          দায়িত্বপ্রাপ্ত প্রতিনিধির সঙ্গে শেয়ার করা হতে পারে।
+          আইনগত বাধ্যবাধকতা ছাড়া ব্যক্তিগত তথ্য অপ্রয়োজনে অন্য কারও
+          কাছে প্রকাশ করা হবে না।
+        </p>
+
+        <h4>লোকেশন ও যোগাযোগ</h4>
+        <p>
+          ডেলিভারি কার্যক্রমে প্রয়োজন হলে লোকেশন ব্যবহারের ব্যবস্থা
+          করা হতে পারে। লোকেশন ব্যবহারের উদ্দেশ্য হবে অর্ডার পৌঁছে দেওয়া।
+        </p>
+
+        <h4>যোগাযোগ</h4>
+        <p>
+          গোপনীয়তা সংক্রান্ত প্রশ্ন বা অনুরোধের জন্য
+          mtechcompanybd@gmail.com ঠিকানায় যোগাযোগ করুন।
+        </p>
+      </div>
+    </details>
+
+    <!-- TERMS -->
+    <details id="terms">
+      <summary>২. Terms & Conditions — ব্যবহারের শর্তাবলি</summary>
+      <div class="policy-content">
+
+        <h4>সেবার বর্তমান অবস্থা</h4>
+        <p>
+          বর্তমান ওয়েবসাইটটি প্রাথমিক ডেমো/পরীক্ষামূলক প্রদর্শনী।
+          এখানে প্রদর্শিত পণ্য, মূল্য, অর্ডার ও হিসাব বাস্তব লেনদেন নয়।
+        </p>
+
+        <h4>অর্ডার ও পণ্যের মূল্য</h4>
+        <p>
+          স্থানীয় বাজারে পণ্যের মূল্য, মান ও প্রাপ্যতা পরিবর্তিত হতে পারে।
+          তাই অর্ডারের সময় প্রদর্শিত আনুমানিক মূল্য এবং প্রকৃত ক্রয়মূল্যের
+          মধ্যে পার্থক্য হতে পারে।
+        </p>
+
+        <h4>গ্রাহকের দায়িত্ব</h4>
+        <ul>
+          <li>সঠিক নাম, মোবাইল নম্বর ও ডেলিভারি ঠিকানা দেওয়া।</li>
+          <li>অর্ডারের পণ্য ও পরিমাণ যাচাই করা।</li>
+          <li>চূড়ান্ত বিল ও প্রযোজ্য সেবা চার্জ সম্পর্কে অবগত থাকা।</li>
+        </ul>
+
+        <h4>অর্ডার পরিবর্তন ও বাতিল</h4>
+        <p>
+          ভবিষ্যৎ পূর্ণাঙ্গ সেবায় অর্ডার গ্রহণের পর নির্দিষ্ট সময়ের
+          মধ্যে পরিবর্তন বা বাতিলের সুযোগ রাখার পরিকল্পনা রয়েছে।
+          বাজার কেনাকাটা বা ডেলিভারি শুরু হয়ে গেলে পরিবর্তন বা বাতিল
+          সীমিত হতে পারে।
+        </p>
+
+        <h4>পেমেন্ট</h4>
+        <p>
+          বাস্তব পেমেন্ট ব্যবস্থা চালু হলে অনুমোদিত পেমেন্ট পদ্ধতি,
+          চার্জ এবং পরিশোধের নিয়ম গ্রাহককে জানানো হবে।
+          এই ডেমোতে কোনো বাস্তব পেমেন্ট গ্রহণ করা হচ্ছে না।
+        </p>
+
+        <h4>সেবার পরিবর্তন</h4>
+        <p>
+          প্রয়োজন অনুযায়ী সেবার নিয়ম, সুবিধা ও শর্তাবলি পরিবর্তন বা
+          হালনাগাদ করা হতে পারে।
+        </p>
+      </div>
+    </details>
+
+    <!-- REFUND POLICY -->
+    <details id="refund">
+      <summary>৩. Refund & Replacement Policy — ফেরত ও পরিবর্তন নীতি</summary>
+      <div class="policy-content">
+
+        <h4>অভিযোগ জানানোর কারণ</h4>
+        <p>
+          ভবিষ্যৎ পূর্ণাঙ্গ সেবায় ভুল পণ্য, ক্ষতিগ্রস্ত পণ্য,
+          অর্ডারের সঙ্গে অমিল অথবা পণ্যের মানসংক্রান্ত সমস্যা হলে
+          গ্রাহক অভিযোগ জানাতে পারবেন।
+        </p>
+
+        <h4>অভিযোগ জানানোর পদ্ধতি</h4>
+        <ul>
+          <li>পণ্য হাতে পাওয়ার পর যত দ্রুত সম্ভব যোগাযোগ করতে হবে।</li>
+          <li>সমস্যার বিবরণ এবং প্রয়োজনে পণ্যের ছবি দিতে হতে পারে।</li>
+          <li>অর্ডার নম্বর ও যোগাযোগের তথ্য জানাতে হবে।</li>
+        </ul>
+
+        <h4>সমাধানের ব্যবস্থা</h4>
+        <p>
+          অভিযোগ যাচাই করে পরিস্থিতি অনুযায়ী পণ্য পরিবর্তন,
+          সমপরিমাণ অর্থ ফেরত অথবা অন্য গ্রহণযোগ্য সমাধানের ব্যবস্থা
+          বিবেচনা করা হবে।
+        </p>
+
+        <h4>যেসব ক্ষেত্রে সীমাবদ্ধতা থাকতে পারে</h4>
+        <p>
+          দ্রুত নষ্ট হয় এমন পণ্য, গ্রাহকের ভুল সংরক্ষণ বা ব্যবহারের
+          কারণে ক্ষতি এবং গ্রাহকের অনুমোদিত পণ্যের ক্ষেত্রে
+          ফেরত বা পরিবর্তনের সুযোগ সীমিত হতে পারে।
+        </p>
+
+        <h4>অর্থ ফেরত</h4>
+        <p>
+          বাস্তব পেমেন্ট ব্যবস্থা চালুর পর অনুমোদিত রিফান্ডের অর্থ
+          মূল পেমেন্ট মাধ্যম অথবা সম্মত অন্য মাধ্যমে ফেরত দেওয়ার
+          নিয়ম নির্ধারণ করা হবে।
+        </p>
+
+        <p>
+          অভিযোগ ও সহায়তার জন্য হেল্পলাইন:
+          <a href="tel:+8801912709914">+880 1912-709914</a>
+        </p>
+      </div>
+    </details>
+
+    <!-- SECURITY POLICY -->
+    <details id="security">
+      <summary>৪. Security & Data Protection Policy — নিরাপত্তা নীতি</summary>
+      <div class="policy-content">
+
+        <h4>তথ্যের নিরাপত্তা</h4>
+        <p>
+          গ্রাহকের ব্যক্তিগত তথ্য ও অর্ডারের তথ্য সুরক্ষিত রাখার
+          জন্য প্রয়োজনীয় প্রযুক্তিগত ও পরিচালনাগত ব্যবস্থা
+          বাস্তবায়নের পরিকল্পনা রয়েছে।
+        </p>
+
+        <h4>প্রবেশাধিকার নিয়ন্ত্রণ</h4>
+        <p>
+          পূর্ণাঙ্গ সেবা চালুর ক্ষেত্রে দায়িত্ব অনুযায়ী কর্মী ও
+          প্রতিনিধিদের তথ্য ব্যবহারের অনুমতি সীমিত রাখার ব্যবস্থা
+          করা হবে।
+        </p>
+
+        <h4>অ্যাকাউন্ট নিরাপত্তা</h4>
+        <ul>
+          <li>নিজের OTP বা পাসওয়ার্ড অন্য কাউকে দেওয়া যাবে না।</li>
+          <li>সন্দেহজনক কার্যক্রম দেখলে দ্রুত যোগাযোগ করতে হবে।</li>
+          <li>অন্যের অ্যাকাউন্টে অননুমোদিত প্রবেশের চেষ্টা করা যাবে না।</li>
+        </ul>
+
+        <h4>ডেলিভারি সংক্রান্ত তথ্য</h4>
+        <p>
+          অর্ডার সম্পন্ন করার জন্য প্রয়োজনীয় তথ্য শুধু সংশ্লিষ্ট
+          দায়িত্বপ্রাপ্ত ব্যক্তির কাছে দেওয়ার নীতি অনুসরণ করা হবে।
+        </p>
+
+        <h4>নিরাপত্তা সংক্রান্ত অভিযোগ</h4>
+        <p>
+          কোনো তথ্যের অপব্যবহার বা নিরাপত্তাজনিত সমস্যা মনে হলে
+          mtechcompanybd@gmail.com ঠিকানায় অথবা হেল্পলাইনে যোগাযোগ করুন।
+        </p>
+      </div>
+    </details>
+
+  </div>
+
+  <div class="info-note">
+    <strong>গুরুত্বপূর্ণ:</strong>
+    উপরের নীতিমালাগুলো প্রাথমিক খসড়া এবং ডেমো প্রদর্শনের জন্য।
+    বাস্তব বাণিজ্যিক সেবা চালুর আগে প্রযোজ্য আইন, লাইসেন্স ও
+    আইনগত পরামর্শ অনুযায়ী এগুলো পর্যালোচনা ও চূড়ান্ত করতে হবে।
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+
+  <strong>টাটকা বাজার</strong>
+  <p>A Brand of M-Tech</p>
+  <p>পছন্দের বাজার, বিশ্বস্ত মানুষের হাতে।</p>
+
+  <div class="quick-links">
+    <a href="#about">About Us</a>
+    <a href="#services">আমাদের সেবা</a>
+    <a href="#how-it-works">যেভাবে কাজ করে</a>
+    <a href="#team">Management Team</a>
+    <a href="#contact">Contact Us</a>
+  </div>
+
+  <div class="quick-links">
+    <a href="#privacy">Privacy Policy</a>
+    <a href="#terms">Terms & Conditions</a>
+    <a href="#refund">Refund Policy</a>
+    <a href="#security">Security Policy</a>
+  </div>
+
+  <p>আশরাফ মার্কেট, পৌরসভা রোড, কেশবপুর, যশোর, বাংলাদেশ।</p>
+
+  <p class="footer-contact">
+    ইমেইল:
+    <a href="mailto:mtechcompanybd@gmail.com">mtechcompanybd@gmail.com</a>
+    <br>
+    হেল্পলাইন:
+    <a href="tel:+8801912709914">+880 1912-709914</a>
+  </p>
+
+  <small>
+    © 2026 টাটকা বাজার। সর্বস্বত্ব সংরক্ষিত।
+    <br>
+    এটি একটি প্রাথমিক সফটওয়্যার ডেমো/পরীক্ষামূলক প্রদর্শনী।
+  </small>
+
 </footer>
 
 <script src="app.js"></script>
+
 </body>
 </html>
