@@ -241,80 +241,163 @@
 
 <!-- গ্রাহক অ্যাপ -->
 <section id="customer" class="screen show">
-  <h2>আজকের বাজার</h2>
 
-  <!-- ডেলিভারি ঠিকানা -->
-  <div class="address-panel">
-    <h2>📍 ডেলিভারি ঠিকানা</h2>
-    <p>আপনার এলাকার তথ্য নির্বাচন করুন</p>
-
-    <label>বিভাগ</label>
-    <select id="division">
-      <option value="">বিভাগ নির্বাচন করুন</option>
-      <option value="খুলনা">খুলনা বিভাগ</option>
-    </select>
-
-    <label>জেলা</label>
-    <select id="district" disabled>
-      <option value="">আগে বিভাগ নির্বাচন করুন</option>
-    </select>
-
-    <label>উপজেলা / থানা</label>
-    <select id="upazila" disabled>
-      <option value="">আগে জেলা নির্বাচন করুন</option>
-    </select>
-
-    <label>এলাকার ধরন</label>
-    <select id="areaType">
-      <option value="">নির্বাচন করুন</option>
-      <option value="ইউনিয়ন">ইউনিয়ন</option>
-      <option value="পৌরসভা">পৌরসভা</option>
-      <option value="সিটি কর্পোরেশন">সিটি কর্পোরেশন</option>
-    </select>
-
-    <label id="areaLabel">ইউনিয়ন / পৌরসভার নাম</label>
-    <select id="areaName" disabled>
-  <option value="">আগে উপজেলা নির্বাচন করুন</option>
-</select>
-
-    <label>ওয়ার্ড নম্বর</label>
-    <select id="ward" disabled>
-  <option value="">আগে ইউনিয়ন / পৌরসভা নির্বাচন করুন</option>
-</select>
-
-    <label>গ্রাম / বাড়ি / রাস্তা / পরিচিত স্থান</label>
-<textarea id="addressDetails"
-  placeholder="গ্রামের নাম, বাড়ি নম্বর, রাস্তা বা পরিচিত স্থানের নাম লিখুন"></textarea>
-    <button type="button" id="saveAddress">ঠিকানা সংরক্ষণ করুন</button>
-    <p id="addressMessage"></p>
+  <div class="customer-welcome">
+    <h2>টাটকা বাজারে স্বাগতম</h2>
+    <p>আপনার প্রয়োজনীয় বাজার করুন সহজেই।</p>
   </div>
 
-  <div class="stats">
-    <article>নমুনা পণ্য<strong>১২টি</strong></article>
-    <article>সেবা চার্জ<strong>৫%</strong></article>
-    <article>সেবা এলাকা<strong>কেশবপুর</strong></article>
+  <div class="customer-actions">
+    <button type="button" id="showRegister">
+      👤 নিবন্ধন করুন
+    </button>
+
+    <button type="button" id="showShop">
+      🛒 বাজার করুন
+    </button>
+
+    <button type="button" id="showGuest">
+      📦 অতিথি হিসেবে অর্ডার
+    </button>
   </div>
 
-  <div class="filters">
-    <input id="q" placeholder="পণ্য খুঁজুন">
-    <select id="cat">
-      <option value="all">সব ক্যাটাগরি</option>
-      <option>নিত্যপ্রয়োজনীয়</option>
-      <option>শাকসবজি</option>
-      <option>মাছ</option>
-      <option>মসলা</option>
-    </select>
+  <!-- নিবন্ধন -->
+  <div id="registerPanel" class="customer-panel" hidden>
+    <h2>গ্রাহক নিবন্ধন</h2>
+    <p>নিবন্ধনের জন্য আপনার নাম ও মোবাইল নম্বর দিন।</p>
+
+    <label for="regName">পূর্ণ নাম</label>
+    <input id="regName" type="text" placeholder="আপনার পূর্ণ নাম">
+
+    <label for="regPhone">মোবাইল নম্বর</label>
+    <input id="regPhone" type="tel"
+      placeholder="01XXXXXXXXX"
+      inputmode="numeric">
+
+    <button type="button" id="registerButton">
+      নিবন্ধনের জন্য এগিয়ে যান
+    </button>
+
+    <p id="registerMessage" class="form-message"></p>
+
+    <p class="warning">
+      এটি বর্তমানে পাবলিক ডেমো। বাস্তব OTP যাচাই চালু না হওয়া পর্যন্ত
+      কোনো স্থায়ী গ্রাহক অ্যাকাউন্ট তৈরি হবে না।
+    </p>
   </div>
 
-  <div id="products" class="products"></div>
+  <!-- পণ্য ও বাজার -->
+  <div id="shopPanel" hidden>
 
-  <div class="panel">
-    <h3>আপনার বাজারের তালিকা</h3>
-    <div id="cart">পণ্য যোগ করলে এখানে দেখা যাবে।</div>
-    <p class="total">আনুমানিক মোট: <b id="total">৳০</b></p>
-    <button id="order">নমুনা অর্ডার দেখুন</button>
-    <p id="msg"></p>
+    <div class="stats">
+      <article>পণ্য<strong>১২টি</strong></article>
+      <article>সার্ভিস চার্জ<strong>৫%</strong></article>
+      <article>ডেমো এলাকা<strong>কেশবপুর</strong></article>
+    </div>
+
+    <div class="filters">
+      <input id="q" type="search" placeholder="পণ্য খুঁজুন">
+
+      <select id="cat">
+        <option value="all">সকল পণ্য</option>
+        <option value="নিত্যপ্রয়োজনীয়">নিত্যপ্রয়োজনীয়</option>
+        <option value="শাকসবজি">শাকসবজি</option>
+        <option value="মাছ">মাছ</option>
+        <option value="মসলা">মসলা</option>
+      </select>
+    </div>
+
+    <div id="products" class="products"></div>
+
+    <div class="panel">
+      <h3>আপনার বাজারের তালিকা</h3>
+      <div id="cart">পণ্য যোগ করলে এখানে দেখা যাবে।</div>
+
+      <p class="total">
+        আনুমানিক মোট: <b id="total">৳০</b>
+      </p>
+
+      <button type="button" id="checkoutFromCart">
+        অর্ডারের তথ্য দিন
+      </button>
+    </div>
+
   </div>
+
+  <!-- অতিথি ও অর্ডার তথ্য -->
+  <div id="checkoutPanel" class="customer-panel" hidden>
+
+    <h2>অর্ডারের তথ্য</h2>
+    <p>পণ্য ও ডেলিভারির তথ্য পূরণ করুন।</p>
+
+    <label for="orderName">গ্রাহকের পূর্ণ নাম</label>
+    <input id="orderName" type="text" placeholder="আপনার পূর্ণ নাম">
+
+    <label for="orderPhone">মোবাইল নম্বর</label>
+    <input id="orderPhone" type="tel"
+      placeholder="01XXXXXXXXX"
+      inputmode="numeric">
+
+    <div class="address-panel">
+      <h3>📍 ডেলিভারি ঠিকানা</h3>
+
+      <label for="division">বিভাগ</label>
+      <select id="division">
+        <option value="">বিভাগ নির্বাচন করুন</option>
+        <option value="খুলনা">খুলনা</option>
+      </select>
+
+      <label for="district">জেলা</label>
+      <select id="district" disabled>
+        <option value="">আগে বিভাগ নির্বাচন করুন</option>
+      </select>
+
+      <label for="upazila">উপজেলা / থানা</label>
+      <select id="upazila" disabled>
+        <option value="">আগে জেলা নির্বাচন করুন</option>
+      </select>
+
+      <label for="areaType">এলাকার ধরন</label>
+      <select id="areaType">
+        <option value="">এলাকার ধরন নির্বাচন করুন</option>
+        <option value="ইউনিয়ন">ইউনিয়ন</option>
+        <option value="পৌরসভা">পৌরসভা</option>
+        <option value="সিটি কর্পোরেশন">সিটি কর্পোরেশন</option>
+      </select>
+
+      <label for="areaName">ইউনিয়ন / পৌরসভা / এলাকার নাম</label>
+      <select id="areaName" disabled>
+        <option value="">আগে উপজেলা নির্বাচন করুন</option>
+      </select>
+
+      <input id="manualArea" type="text"
+        placeholder="তালিকায় না থাকলে এলাকার নাম লিখুন"
+        hidden>
+
+      <label for="ward">ওয়ার্ড নম্বর (ঐচ্ছিক)</label>
+      <input id="ward" type="text"
+        placeholder="জানা থাকলে লিখুন">
+
+      <label for="addressDetails">
+        গ্রাম / বাড়ি / রাস্তা / পরিচিত স্থান
+      </label>
+      <textarea id="addressDetails"
+        placeholder="বিস্তারিত ঠিকানা লিখুন"></textarea>
+    </div>
+
+    <p class="warning">
+      অতিথি হিসেবে অর্ডার করতে স্থায়ী অ্যাকাউন্ট প্রয়োজন নেই।
+      এই ডেমোতে অর্ডার বাস্তবে পাঠানো হবে না।
+    </p>
+
+    <button type="button" id="placeDemoOrder">
+      ডেমো অর্ডার তৈরি করুন
+    </button>
+
+    <p id="orderMessage" class="form-message"></p>
+
+  </div>
+
 </section>
 
 <!-- বাজার প্রতিনিধি -->
