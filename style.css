@@ -611,6 +611,7 @@ footer small {
 
 @media (max-width: 600px) {
     .customer-actions {
+       
         grid-template-columns: 1fr;
     }
 
@@ -621,5 +622,124 @@ footer small {
 
     .customer-panel {
         padding: 14px;
+    }
+}
+
+/* =========================================
+   TATKA BAZAR - NEW FEATURES
+   Complaint, Representative & Order Management
+========================================= */
+
+/* নতুন প্যানেল */
+#complaintSection,
+#adminComplaintSection,
+#representativeManagement {
+    margin-top: 25px;
+    padding: 20px;
+    background: #ffffff;
+    border: 1px solid #e2ebe5;
+    border-radius: 12px;
+}
+
+/* নতুন প্যানেলের শিরোনাম */
+#complaintSection h2,
+#adminComplaintSection h2,
+#representativeManagement h2 {
+    color: var(--primary-dark);
+    margin-bottom: 12px;
+}
+
+/* নতুন ফর্মের লেবেল */
+#complaintSection label,
+#adminComplaintSection label,
+#representativeManagement label {
+    display: block;
+    margin-top: 14px;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+/* নতুন ফর্মের ইনপুট */
+#complaintSection input,
+#complaintSection select,
+#complaintSection textarea,
+#adminComplaintSection select,
+#adminComplaintSection textarea,
+#representativeManagement input {
+    width: 100%;
+    padding: 11px;
+    border: 1px solid #d5ded8;
+    border-radius: 7px;
+    font-size: 15px;
+    font-family: inherit;
+    background: #ffffff;
+}
+
+/* ফোকাস */
+#complaintSection input:focus,
+#complaintSection select:focus,
+#complaintSection textarea:focus,
+#adminComplaintSection select:focus,
+#adminComplaintSection textarea:focus,
+#representativeManagement input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+/* নতুন ফিচারের বাটন */
+#complaintSection button,
+#adminComplaintSection button,
+#representativeManagement button {
+    margin-top: 12px;
+    padding: 10px 16px;
+    background: var(--primary);
+    color: #ffffff;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+}
+
+#complaintSection button:hover,
+#adminComplaintSection button:hover,
+#representativeManagement button:hover {
+    background: var(--primary-dark);
+}
+
+/* অভিযোগ ও প্রতিনিধির কার্ড */
+#adminComplaintList > article,
+#representativeList > article {
+    margin-top: 15px;
+    padding: 15px;
+    background: #f7faf8;
+    border: 1px solid #e1e9e3;
+    border-radius: 9px;
+}
+
+#adminComplaintList article p,
+#representativeList article p {
+    margin: 7px 0;
+    line-height: 1.6;
+}
+
+/* অভিযোগের বার্তা */
+#complaintMessage {
+    margin-top: 12px;
+    color: var(--primary-dark);
+    font-weight: 600;
+}
+
+/* মোবাইল */
+@media (max-width: 600px) {
+    #complaintSection,
+    #adminComplaintSection,
+    #representativeManagement {
+        padding: 14px;
+    }
+
+    #adminComplaintList > article,
+    #representativeList > article {
+        padding: 12px;
     }
 }
