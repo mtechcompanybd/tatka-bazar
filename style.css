@@ -1,114 +1,141 @@
-
 /* =========================================
-   TATKA BAZAR - MAIN STYLESHEET
-   A Brand of M-Tech
+   TATKA BAZAR - MODERN ENTERPRISE STYLESHEET
+   A Brand of M-Tech | Professional Edition
 ========================================= */
 
-/* 1. Basic Reset */
+/* 1. Root Variables & Theme */
+:root {
+    --primary: #0f763e;
+    --primary-dark: #09522a;
+    --primary-light: #e6f4ed;
+    --accent: #20a35c;
+    --secondary: #f4f8f5;
+    --background: #f8faf9;
+    --text: #1e2923;
+    --muted: #64746b;
+    --border: #d9e6de;
+    --white: #ffffff;
+    --warning-bg: #fff8eb;
+    --warning-border: #fef0cd;
+    --warning-text: #8a6d1a;
+    --shadow-sm: 0 2px 4px rgba(15, 118, 62, 0.04);
+    --shadow-md: 0 4px 12px rgba(15, 118, 62, 0.08);
+    --shadow-lg: 0 10px 25px rgba(15, 118, 62, 0.12);
+    --radius: 12px;
+}
+
+/* 2. Basic Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-:root {
-    --primary: #16834a;
-    --primary-dark: #096438;
-    --secondary: #f1f8f3;
-    --background: #f7f9f8;
-    --text: #26352c;
-    --muted: #718078;
-    --border: #e1e9e3;
-    --white: #ffffff;
-    --warning: #fff4df;
-}
-
-/* 2. Body */
 body {
     font-family: Arial, "Noto Sans Bengali", sans-serif;
     background: var(--background);
     color: var(--text);
     line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
 }
 
 /* 3. Header */
 header {
     background: var(--white);
-    padding: 15px 5%;
+    padding: 16px 5%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-bottom: 1px solid var(--border);
-    gap: 12px;
+    box-shadow: var(--shadow-sm);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .brand {
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 12px;
 }
 
 .brand > b {
-    width: 45px;
-    height: 45px;
-    background: var(--primary);
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, var(--primary), var(--accent));
     color: var(--white);
-    border-radius: 12px;
+    border-radius: 14px;
     display: grid;
     place-items: center;
-    font-size: 25px;
+    font-size: 26px;
+    box-shadow: 0 4px 10px rgba(15, 118, 62, 0.2);
 }
 
 .brand strong {
     display: block;
-    font-size: 19px;
+    font-size: 20px;
+    color: var(--primary-dark);
 }
 
 .brand small {
     color: var(--muted);
     font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
 }
 
 header label {
-    background: #e6f5eb;
+    background: var(--primary-light);
     color: var(--primary-dark);
-    padding: 5px 12px;
-    border-radius: 20px;
+    padding: 6px 14px;
+    border-radius: 30px;
     font-size: 11px;
     font-weight: bold;
+    letter-spacing: 0.5px;
+    border: 1px solid #c8e6d4;
 }
 
 /* 4. Hero Section */
 .hero {
-    background: linear-gradient(
-        135deg,
-        #0d713d,
-        #20a35c
-    );
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary), var(--accent));
     color: var(--white);
     text-align: center;
-    padding: 55px 20px;
+    padding: 65px 20px;
+    box-shadow: inset 0 -20px 40px rgba(0,0,0,0.05);
 }
 
 .hero h1 {
-    font-size: clamp(25px, 5vw, 42px);
-    line-height: 1.4;
+    font-size: clamp(28px, 5vw, 44px);
+    line-height: 1.3;
     margin: 12px 0;
+    font-weight: 800;
 }
 
 .hero p {
-    font-size: 15px;
+    font-size: 16px;
     opacity: 0.95;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 /* 5. Navigation */
 nav {
     background: var(--white);
-    padding: 12px;
+    padding: 12px 5%;
     display: flex;
-    gap: 8px;
+    gap: 10px;
     overflow-x: auto;
     border-bottom: 1px solid var(--border);
+    box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+    scrollbar-width: thin;
+}
+
+nav::-webkit-scrollbar {
+    height: 4px;
+}
+nav::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
 }
 
 nav button {
@@ -116,178 +143,244 @@ nav button {
     border: 1px solid var(--border);
     background: var(--white);
     color: var(--text);
-    padding: 10px 16px;
-    border-radius: 8px;
+    padding: 10px 18px;
+    border-radius: 10px;
     cursor: pointer;
     font-size: 14px;
+    font-weight: 600;
+    transition: all 0.25s ease;
+}
+
+nav button:hover {
+    background: var(--primary-light);
+    color: var(--primary);
+    border-color: #b3d9c3;
 }
 
 nav button.active {
     background: var(--primary);
     color: var(--white);
     border-color: var(--primary);
+    box-shadow: 0 4px 12px rgba(15, 118, 62, 0.25);
 }
 
 /* 6. Main Layout */
 main {
-    max-width: 1150px;
-    margin: 25px auto;
-    padding: 0 18px;
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
 }
 
 h2 {
     font-size: 24px;
     margin-bottom: 18px;
+    color: var(--primary-dark);
 }
 
 h3 {
     font-size: 18px;
     margin-bottom: 12px;
+    color: var(--text);
 }
 
 /* 7. Demo Notice */
 aside {
-    background: var(--warning);
-    border: 1px solid #f1dfb8;
-    padding: 14px;
-    border-radius: 10px;
-    margin-bottom: 22px;
+    background: var(--warning-bg);
+    border: 1px solid var(--warning-border);
+    color: var(--warning-text);
+    padding: 16px 20px;
+    border-radius: var(--radius);
+    margin-bottom: 25px;
     font-size: 14px;
+    box-shadow: var(--shadow-sm);
 }
 
 /* 8. Dashboard Screens */
 .screen {
     display: none;
+    animation: fadeIn 0.3s ease-in-out;
 }
 
 .screen.show {
     display: block;
 }
 
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* 9. Statistics Cards */
 .stats {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 14px;
-    margin: 20px 0;
+    gap: 16px;
+    margin: 24px 0;
 }
 
 .stats article {
     background: var(--white);
     border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 18px;
+    border-radius: var(--radius);
+    padding: 20px;
     font-size: 13px;
     color: var(--muted);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.stats article:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+    border-color: #b3d9c3;
 }
 
 .stats article strong {
     display: block;
-    font-size: 22px;
+    font-size: 24px;
     color: var(--primary);
-    margin-top: 7px;
+    margin-top: 6px;
+    font-weight: 700;
 }
 
 /* 10. Search and Category Filters */
 .filters {
     display: flex;
-    gap: 10px;
-    margin: 20px 0;
+    gap: 12px;
+    margin: 24px 0;
 }
 
 input,
-select {
+select,
+textarea {
     width: 100%;
-    padding: 12px;
+    padding: 13px 16px;
     border: 1px solid var(--border);
-    border-radius: 8px;
+    border-radius: 10px;
     background: var(--white);
     color: var(--text);
     font-size: 14px;
     outline: none;
+    transition: all 0.2s ease;
 }
 
 input:focus,
-select:focus {
+select:focus,
+textarea:focus {
     border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(15, 118, 62, 0.12);
 }
 
 /* 11. Product Grid */
 .products {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
+    gap: 20px;
 }
 
 .product {
     background: var(--white);
     border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 16px;
-    transition: 0.2s;
+    border-radius: var(--radius);
+    padding: 20px;
+    transition: all 0.25s ease;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .product:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+    border-color: #b3d9c3;
 }
 
 .product > div:first-child {
-    font-size: 35px;
-    margin-bottom: 8px;
+    font-size: 40px;
+    margin-bottom: 12px;
+    background: var(--secondary);
+    width: 65px;
+    height: 65px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
 }
 
 .product h3 {
     margin-bottom: 4px;
+    color: var(--primary-dark);
 }
 
 .product small {
     color: var(--muted);
+    font-size: 12px;
 }
 
 .product .foot {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 8px;
-    margin-top: 14px;
+    gap: 10px;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--border);
 }
 
 .product .foot b {
     color: var(--primary);
+    font-size: 16px;
 }
 
 /* 12. Buttons */
 button {
     font-family: inherit;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s ease;
 }
 
 .product button,
-.panel button {
+.panel button,
+.customer-panel button,
+.address-panel button {
     background: var(--primary);
     color: var(--white);
     border: none;
-    padding: 9px 13px;
-    border-radius: 7px;
-    cursor: pointer;
+    padding: 10px 16px;
+    border-radius: 10px;
     font-size: 13px;
+    box-shadow: 0 2px 6px rgba(15, 118, 62, 0.2);
 }
 
 button:hover {
-    filter: brightness(0.95);
+    background: var(--primary-dark);
+    box-shadow: 0 4px 10px rgba(9, 82, 42, 0.3);
+}
+
+button:active {
+    transform: scale(0.98);
 }
 
 /* 13. General Panels */
-.panel {
+.panel,
+.customer-panel,
+.address-panel,
+.info-section,
+#complaintSection,
+#adminComplaintSection,
+#representativeManagement {
     background: var(--white);
     border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px;
-    margin: 20px 0;
+    border-radius: var(--radius);
+    padding: 25px;
+    margin: 24px 0;
+    box-shadow: var(--shadow-sm);
 }
 
-.panel p {
+.panel p, .customer-panel p {
     margin: 8px 0;
+    color: #4a5d53;
 }
 
 .panel ul {
@@ -300,8 +393,8 @@ button:hover {
 
 .total {
     border-top: 1px solid var(--border);
-    padding-top: 12px;
-    margin-top: 15px;
+    padding-top: 16px;
+    margin-top: 18px;
 }
 
 .total b {
@@ -317,429 +410,248 @@ button:hover {
 /* 14. Tables */
 table {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 12px;
-    font-size: 13px;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 15px;
+    font-size: 14px;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid var(--border);
 }
 
-th,
-td {
-    border-bottom: 1px solid var(--border);
-    padding: 12px 8px;
+th, td {
+    padding: 14px 12px;
     text-align: left;
 }
 
 th {
     background: var(--secondary);
     color: var(--primary-dark);
+    font-weight: 700;
+    border-bottom: 2px solid var(--border);
+}
+
+td {
+    border-bottom: 1px solid var(--border);
+    color: var(--text);
+}
+
+tr:last-child td {
+    border-bottom: none;
+}
+
+tr:hover td {
+    background: #fafcfb;
 }
 
 /* 15. Warning Text */
 .warning {
-    background: var(--warning);
-    padding: 10px;
-    border-radius: 7px;
-    color: #825c18;
+    background: var(--warning-bg);
+    border: 1px solid var(--warning-border);
+    padding: 12px 16px;
+    border-radius: 10px;
+    color: var(--warning-text);
     font-size: 13px;
+    margin: 12px 0;
 }
 
-/* 16. Footer */
-footer {
-    background: #153b29;
-    color: var(--white);
-    text-align: center;
-    padding: 30px 15px;
-    margin-top: 45px;
-}
-
-footer p {
-    font-size: 13px;
-    margin: 5px 0;
-    opacity: 0.9;
-}
-
-footer small {
-    display: block;
-    margin-top: 12px;
-    opacity: 0.7;
-}
-
-/* 17. Tablet Responsive */
-@media (max-width: 768px) {
-    .stats {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .products {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-    .hero {
-        padding: 40px 15px;
-    }
-}
-
-/* 18. Mobile Responsive */
-@media (max-width: 480px) {
-    header {
-        padding: 12px;
-    }
-
-    .brand strong {
-        font-size: 16px;
-    }
-
-    .hero h1 {
-        font-size: 26px;
-    }
-
-    .stats {
-        grid-template-columns: 1fr 1fr;
-        gap: 9px;
-    }
-
-    .stats article {
-        padding: 12px;
-    }
-
-    .stats article strong {
-        font-size: 18px;
-    }
-
-    .products {
-        grid-template-columns: 1fr 1fr;
-        gap: 9px;
-    }
-
-    .product {
-        padding: 11px;
-    }
-
-    .product h3 {
-        font-size: 15px;
-    }
-
-    .product .foot {
-        flex-wrap: wrap;
-    }
-
-    .filters {
-        flex-direction: column;
-    }
-
-    .panel {
-        padding: 14px;
-    }
-
-    table {
-        font-size: 11px;
-    }
-
-    th,
-    td {
-        padding: 8px 5px;
-    }
-}
-/* ডেলিভারি ঠিকানা ফর্ম */
-
-.address-panel {
-  background: #ffffff;
-  padding: 18px;
-  margin: 18px 0;
-  border-radius: 12px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
-}
-
-.address-panel h2 {
-  margin-top: 0;
-  color: #16834a;
-}
-
-.address-panel p {
-  color: #666;
-}
-
-.address-panel label {
-  display: block;
-  margin-top: 13px;
-  margin-bottom: 5px;
-  font-weight: 600;
-}
-
-.address-panel select,
-.address-panel input,
-.address-panel textarea {
-  width: 100%;
-  box-sizing: border-box;
-  padding: 11px;
-  border: 1px solid #ccc;
-  border-radius: 7px;
-  font-size: 15px;
-  background: #fff;
-}
-
-.address-panel textarea {
-  min-height: 75px;
-  resize: vertical;
-}
-
-.address-panel button {
-  width: 100%;
-  margin-top: 16px;
-  padding: 12px;
-  border: none;
-  border-radius: 7px;
-  background: #16834a;
-  color: white;
-  font-size: 16px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.address-panel button:hover {
-  background: #116b3b;
-}
-
-.address-panel select:disabled {
-  background: #f1f1f1;
-  color: #888;
-}
-
-#addressMessage {
-  color: #16834a;
-  font-weight: 600;
-}
-/* =================================
-   CUSTOMER APP
-================================= */
-
-[hidden] {
-    display: none !important;
-}
-
+/* 16. Customer App Layout enhancements */
 .customer-welcome {
-    background: var(--secondary);
-    padding: 22px;
-    border-radius: 12px;
-    margin-bottom: 18px;
+    background: linear-gradient(135deg, var(--secondary), var(--primary-light));
+    padding: 25px;
+    border-radius: var(--radius);
+    margin-bottom: 22px;
+    border: 1px solid #cbe6d7;
 }
 
 .customer-welcome h2 {
     color: var(--primary-dark);
-    margin-bottom: 5px;
+    margin-bottom: 6px;
 }
 
 .customer-actions {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin: 18px 0;
+    gap: 15px;
+    margin: 20px 0;
 }
 
 .customer-actions button {
     background: var(--white);
     border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 16px 10px;
+    border-radius: var(--radius);
+    padding: 20px 15px;
     color: var(--primary-dark);
-    font-size: 15px;
-    font-weight: bold;
+    font-size: 16px;
+    font-weight: 700;
     cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: all 0.25s;
+    text-align: center;
 }
 
 .customer-actions button:hover {
-    background: var(--secondary);
+    background: var(--primary-light);
     border-color: var(--primary);
-}
-
-.customer-panel {
-    background: var(--white);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 20px;
-    margin: 20px 0;
-}
-
-.customer-panel label {
-    display: block;
-    margin: 13px 0 5px;
-    font-weight: 600;
-}
-
-.customer-panel input,
-.customer-panel select,
-.customer-panel textarea {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    font: inherit;
-    background: var(--white);
-}
-
-.customer-panel textarea {
-    min-height: 85px;
-    resize: vertical;
-}
-
-.customer-panel > button {
-    width: 100%;
-    padding: 12px;
-    margin-top: 15px;
-    border: none;
-    border-radius: 8px;
-    background: var(--primary);
-    color: var(--white);
-    font-size: 15px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.customer-panel .address-panel {
-    margin-top: 20px;
-    padding: 15px;
-    border: 1px solid var(--border);
-    box-shadow: none;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 
 .form-message {
-    margin-top: 12px;
+    margin-top: 14px;
     color: var(--primary-dark);
     font-weight: 600;
     overflow-wrap: anywhere;
 }
 
-@media (max-width: 600px) {
-    .customer-actions {
-       
+/* Info Grids & Management Team */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.info-card {
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s;
+}
+
+.info-card:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-md);
+}
+
+.team-card {
+    text-align: center;
+}
+
+.team-card .team-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 15px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 28px;
+    font-weight: bold;
+    border: 2px solid #b3d9c3;
+}
+
+.team-role {
+    color: var(--muted);
+    font-size: 14px;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.team-phone, .contact-link {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.team-phone:hover, .contact-link:hover {
+    text-decoration: underline;
+}
+
+.contact-panel {
+    background: var(--secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 30px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+}
+
+/* 17. Footer */
+footer {
+    background: #092e1b;
+    color: var(--white);
+    text-align: center;
+    padding: 45px 20px;
+    margin-top: 60px;
+    border-top: 4px solid var(--primary);
+}
+
+footer strong {
+    font-size: 20px;
+    letter-spacing: 0.5px;
+}
+
+footer p {
+    font-size: 14px;
+    margin: 8px 0;
+    opacity: 0.85;
+}
+
+footer .quick-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px 25px;
+    margin: 20px 0;
+}
+
+footer .quick-links a {
+    color: #a3c9b4;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.2s;
+}
+
+footer .quick-links a:hover {
+    color: var(--white);
+    text-decoration: underline;
+}
+
+footer small {
+    display: block;
+    margin-top: 20px;
+    opacity: 0.6;
+    font-size: 12px;
+}
+
+/* 18. Responsive Media Queries */
+@media (max-width: 768px) {
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .hero {
+        padding: 45px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        padding: 12px 15px;
+    }
+    .brand strong {
+        font-size: 16px;
+    }
+    .hero h1 {
+        font-size: 26px;
+    }
+    .stats {
         grid-template-columns: 1fr;
     }
-
-    .customer-actions button {
-        text-align: left;
-        padding: 14px;
+    .products {
+        grid-template-columns: 1fr;
     }
-
-    .customer-panel {
-        padding: 14px;
+    .customer-actions {
+        grid-template-columns: 1fr;
     }
-}
-
-/* =========================================
-   TATKA BAZAR - NEW FEATURES
-   Complaint, Representative & Order Management
-========================================= */
-
-/* নতুন প্যানেল */
-#complaintSection,
-#adminComplaintSection,
-#representativeManagement {
-    margin-top: 25px;
-    padding: 20px;
-    background: #ffffff;
-    border: 1px solid #e2ebe5;
-    border-radius: 12px;
-}
-
-/* নতুন প্যানেলের শিরোনাম */
-#complaintSection h2,
-#adminComplaintSection h2,
-#representativeManagement h2 {
-    color: var(--primary-dark);
-    margin-bottom: 12px;
-}
-
-/* নতুন ফর্মের লেবেল */
-#complaintSection label,
-#adminComplaintSection label,
-#representativeManagement label {
-    display: block;
-    margin-top: 14px;
-    margin-bottom: 6px;
-    font-weight: 600;
-}
-
-/* নতুন ফর্মের ইনপুট */
-#complaintSection input,
-#complaintSection select,
-#complaintSection textarea,
-#adminComplaintSection select,
-#adminComplaintSection textarea,
-#representativeManagement input {
-    width: 100%;
-    padding: 11px;
-    border: 1px solid #d5ded8;
-    border-radius: 7px;
-    font-size: 15px;
-    font-family: inherit;
-    background: #ffffff;
-}
-
-/* ফোকাস */
-#complaintSection input:focus,
-#complaintSection select:focus,
-#complaintSection textarea:focus,
-#adminComplaintSection select:focus,
-#adminComplaintSection textarea:focus,
-#representativeManagement input:focus {
-    outline: none;
-    border-color: var(--primary);
-}
-
-/* নতুন ফিচারের বাটন */
-#complaintSection button,
-#adminComplaintSection button,
-#representativeManagement button {
-    margin-top: 12px;
-    padding: 10px 16px;
-    background: var(--primary);
-    color: #ffffff;
-    border: none;
-    border-radius: 7px;
-    cursor: pointer;
-    font-family: inherit;
-    font-weight: 600;
-}
-
-#complaintSection button:hover,
-#adminComplaintSection button:hover,
-#representativeManagement button:hover {
-    background: var(--primary-dark);
-}
-
-/* অভিযোগ ও প্রতিনিধির কার্ড */
-#adminComplaintList > article,
-#representativeList > article {
-    margin-top: 15px;
-    padding: 15px;
-    background: #f7faf8;
-    border: 1px solid #e1e9e3;
-    border-radius: 9px;
-}
-
-#adminComplaintList article p,
-#representativeList article p {
-    margin: 7px 0;
-    line-height: 1.6;
-}
-
-/* অভিযোগের বার্তা */
-#complaintMessage {
-    margin-top: 12px;
-    color: var(--primary-dark);
-    font-weight: 600;
-}
-
-/* মোবাইল */
-@media (max-width: 600px) {
-    #complaintSection,
-    #adminComplaintSection,
-    #representativeManagement {
-        padding: 14px;
-    }
-
-    #adminComplaintList > article,
-    #representativeList > article {
-        padding: 12px;
+    .filters {
+        flex-direction: column;
     }
 }
