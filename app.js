@@ -517,3 +517,11 @@ if (districtSelect && upazilaSelect) {
         }
     });
 }
+document.addEventListener("change", function(e) {
+    if (e.target && (e.target.id === "district" || e.target.id === "upazila")) {
+        const demoAreaEl = document.getElementById("demoAreaName");
+        if (demoAreaEl && e.target.value) {
+            demoAreaEl.textContent = e.target.value;
+        }
+    }
+});
