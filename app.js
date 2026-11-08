@@ -62,20 +62,21 @@ function makeOrderNumber() {
 // =========================================
 
 function parseWeightInKg(text) {
+    if (!text) return 1;
     text = text.toLowerCase().trim();
-    let totalKg = 0;
+    
+    const numberMatch = text.match(/[\d.]+/);
+    if (!numberMatch) return 1;
+    
+    const val = parseFloat(numberMatch[0]) || 1;
 
-    if (text.includes("কেজি") || text.includes("লিটার")) {
-        const parts = text.split(/কেজি|লিটার/);
-        totalKg += parseFloat(parts[0]) || 1;
-    } else if (text.includes("গ্রাম")) {
-        const val = parseFloat(text) || 0;
-        totalKg += val / 1000;
-    } else {
-        totalKg += parseFloat(text) || 1;
+    if (text.includes("গ্রাম") && !text.includes("কেজি")) {
+        return val / 1000;
     }
-    return totalKg;
+    
+    return val;
 }
+
 
 // =========================================
 // ৪. ওজন অনুযায়ী পরিবহন চার্জ
