@@ -501,3 +501,19 @@ if (catSelect) catSelect.addEventListener("change", drawProducts);
 drawProducts();
 drawCart();
 showCustomerPanel(null);
+// জেলা বা উপজেলা পরিবর্তন করলে ডেমো এলাকার নাম আপডেট করার ফাংশন
+if (districtSelect && upazilaSelect) {
+    districtSelect.addEventListener("change", function() {
+        const demoAreaEl = getElement("demoAreaName");
+        if (demoAreaEl && this.value) {
+            demoAreaEl.textContent = this.value;
+        }
+    });
+
+    upazilaSelect.addEventListener("change", function() {
+        const demoAreaEl = getElement("demoAreaName");
+        if (demoAreaEl && this.value) {
+            demoAreaEl.textContent = this.value;
+        }
+    });
+}
