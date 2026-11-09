@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="টাটকা বাজার — কেশবপুর, যশোরের স্থানীয় বাজারভিত্তিক ডিজিটাল কেনাকাটা ও ডেলিভারি সেবার পাবলিক ডেমো।">
+<title>টাটকা বাজার | Public Demo</title>
+<link rel="stylesheet" href="style.css">
+<style>
+.info-section{padding:45px 20px;max-width:1100px;margin:auto}
+.info-section h2{text-align:center;margin-bottom:12px;color:#176b3a}
+.section-intro{text-align:center;max-width:720px;margin:0 auto 28px;line-height:1.8;color:#555}
+.info-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.info-card{background:#fff;border:1px solid #e5eee7;border-radius:14px;padding:22px;box-shadow:0 3px 12px rgba(0,0,0,.045)}
+.info-card h3{color:#176b3a;margin-top:0}
+.info-card p,.info-card li{line-height:1.8;color:#444}
+.info-card ul{padding-left:20px}
+.team-card{text-align:center}
+.team-card .team-icon{width:62px;height:62px;margin:0 auto 12px;display:grid;place-items:center;border-radius:50%;background:#e8f5eb;color:#176b3a;font-size:25px;font-weight:bold}
+.team-card h3{margin-bottom:5px}
+.team-role{color:#666;font-size:14px;margin-bottom:12px}
+.team-phone,.contact-link{color:#176b3a;text-decoration:none;font-weight:bold;overflow-wrap:anywhere}
+.team-phone:hover,.contact-link:hover{text-decoration:underline}
+.contact-panel{background:#f0f8f2;border:1px solid #d9ebdd;border-radius:16px;padding:25px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:20px}
+.contact-item h3{color:#176b3a;margin-bottom:8px}
+.policy-list{display:grid;gap:12px}
+.policy-list details{background:#fff;border:1px solid #e1e9e3;border-radius:12px;padding:16px 20px}
+.policy-list summary{color:#176b3a;font-weight:bold;cursor:pointer;line-height:1.6}
+.policy-content{padding-top:12px;color:#444;line-height:1.85}
+.policy-content h4{color:#176b3a;margin-bottom:5px}
+.policy-content ul{padding-left:22px}
+.info-note{background:#fff8e7;border-left:4px solid #e5a62c;padding:13px 16px;border-radius:7px;line-height:1.7;color:#604b20;margin-top:20px}
+.quick-links{display:flex;flex-wrap:wrap;justify-content:center;gap:12px 22px;margin:18px 0}
+.quick-links a{color:inherit;text-decoration:none}
+.quick-links a:hover{text-decoration:underline}
+.page-divider{border:0;border-top:1px solid #e5eee7;margin:0}
+.footer-contact a{color:inherit}
+@media(max-width:600px){.info-section{padding:32px 14px}.info-card{padding:18px}.contact-panel{padding:18px}}
+</style>
+</head>
+<body>
+<header><div class="brand"><b>ট</b><span><strong>টাটকা বাজার</strong><small>A Brand of M-Tech</small></span></div><label>PUBLIC DEMO</label></header>
+<section class="hero"><p>কেশবপুর, যশোর</p><h1>আপনার পছন্দের বাজার,<br>বিশ্বস্ত মানুষের হাতে।</h1><p>স্থানীয় বাজার থেকে পণ্য সংগ্রহ ও ঘরে পৌঁছে দেওয়ার ডিজিটাল সেবা।</p></section>
+<nav>
+<button class="active" data-tab="customer">গ্রাহক অ্যাপ</button>
+<button data-tab="admin">অ্যাডমিন</button>
+<button data-tab="accounts">হিসাব বিভাগ</button>
+<button data-tab="hr">HR</button>
+<button data-tab="about">About Us</button>
+<button data-tab="team">Management Team</button>
+<button data-tab="contact">Contact Us</button>
+</nav>
+<main>
+<aside><strong>ডেমো নোট:</strong> এখানে প্রদর্শিত সব তথ্য ও হিসাব নমুনা। বাস্তব অর্ডার বা পেমেন্ট চালু নেই।</aside>
+<!-- গ্রাহক অ্যাপ -->
+<section id="customer" class="screen show">
+<div class="customer-welcome"><h2>টাটকা বাজারে স্বাগতম</h2><p>আপনার প্রয়োজনীয় বাজার করুন সহজেই।</p></div>
+<div class="customer-actions">
+<button type="button" id="showRegister">👤 নিবন্ধন করুন</button>
+<button type="button" id="showShop">🛒 বাজার করুন</button>
+<button type="button" id="showGuest">📦 অতিথি হিসেবে অর্ডার</button>
+<button type="button" id="showDeliveryOnly">🚚 শুধুমাত্র ডেলিভারি সেবা</button>
+</div>
+
+<!-- নিবন্ধন -->
+<div id="registerPanel" class="customer-panel" hidden>
+<h2>গ্রাহক নিবন্ধন</h2><p>নিবন্ধনের জন্য আপনার নাম ও মোবাইল নম্বর দিন।</p>
+<label for="regName">পূর্ণ নাম</label><input id="regName" type="text" placeholder="আপনার পূর্ণ নাম">
+<label for="regPhone">মোবাইল নম্বর</label><input id="regPhone" type="tel" placeholder="01XXXXXXXXX" inputmode="numeric">
+<button type="button" id="registerButton">নিবন্ধনের জন্য এগিয়ে যান</button>
+<p id="registerMessage" class="form-message"></p>
+<p class="warning">এটি বর্তমানে পাবলিক ডেমো। বাস্তব OTP যাচাই চালু না হওয়া পর্যন্ত কোনো স্থায়ী গ্রাহক অ্যাকাউন্ট তৈরি হবে না।</p>
+</div>
+<!-- পণ্য ও বাজার -->
+<div id="shopPanel" hidden>
+<div class="stats"><article>পণ্য<strong>১২টি</strong></article><article>সার্ভিস চার্জ<strong>৳২৫</strong></article><article>ডেমো এলাকা<strong id="demoAreaName">কেশবপুর</strong></article></div>
+<div class="filters"><input id="q" type="search" placeholder="পণ্য খুঁজুন"><select id="cat"><option value="all">সকল পণ্য</option><option value="নিত্যপ্রয়োজনীয়">নিত্যপ্রয়োজনীয়</option><option value="শাকসবজি">শাকসবজি</option><option value="মাছ">মাছ</option><option value="মসলা">মসলা</option></select></div>
+<div id="products" class="products"></div>
+<div class="panel"><h3>আপনার বাজারের তালিকা</h3><div id="cart">পণ্য যোগ করলে এখানে দেখা যাবে।</div><p class="total">আনুমানিক মোট: <b id="total">৳০</b></p><button type="button" id="checkoutFromCart">অর্ডারের তথ্য দিন</button></div>
+</div>
+<!-- অতিথি ও অর্ডার তথ্য -->
+<div id="checkoutPanel" class="customer-panel" hidden>
+<h2>অর্ডারের তথ্য</h2><p>পণ্য ও ডেলিভারির তথ্য পূরণ করুন।</p>
+<label for="orderName">গ্রাহকের পূর্ণ নাম</label><input id="orderName" type="text" placeholder="আপনার পূর্ণ নাম">
+<label for="orderPhone">মোবাইল নম্বর</label><input id="orderPhone" type="tel" placeholder="01XXXXXXXXX" inputmode="numeric">
+<div class="address-panel"><h3>📍 ডেলিভারি ঠিকানা</h3>
+<label for="division">বিভাগ</label><select id="division"><option value="">বিভাগ নির্বাচন করুন</option><option value="খুলনা">খুলনা</option></select>
+<label for="district">জেলা</label><select id="district" disabled><option value="">আগে বিভাগ নির্বাচন করুন</option></select>
+<label for="upazila">উপজেলা / থানা</label><select id="upazila" disabled><option value="">আগে জেলা নির্বাচন করুন</option></select>
+<label for="areaType">এলাকার ধরন</label><select id="areaType"><option value="">এলাকার ধরন নির্বাচন করুন</option><option value="ইউনিয়ন">ইউনিয়ন</option><option value="পৌরসভা">পৌরসভা</option><option value="সিটি কর্পোরেশন">সিটি কর্পোরেশন</option></select>
+<label for="areaName">ইউনিয়ন / পৌরসভা / এলাকার নাম</label><select id="areaName" disabled><option value="">আগে উপজেলা নির্বাচন করুন</option></select>
+<input id="manualArea" type="text" placeholder="তালিকায় না থাকলে এলাকার নাম লিখুন" hidden>
+<label for="ward">ওয়ার্ড নম্বর (ঐচ্ছিক)</label><input id="ward" type="text" placeholder="জানা থাকলে লিখুন">
+<label for="addressDetails">গ্রাম / বাড়ি / রাস্তা / পরিচিত স্থান</label><textarea id="addressDetails" placeholder="বিস্তারিত ঠিকানা লিখুন"></textarea></div>
+<p class="warning">অতিথি হিসেবে অর্ডার করতে স্থায়ী অ্যাকাউন্ট প্রয়োজন নেই। এই ডেমোতে অর্ডার বাস্তবে পাঠানো হবে না।</p>
+<button type="button" id="placeDemoOrder">ডেমো অর্ডার তৈরি করুন</button><p id="orderMessage" class="form-message"></p>
+</div>
+<!-- শুধুমাত্র ডেলিভারি সেবা -->
+<div id="deliveryOnlyPanel" class="customer-panel" hidden>
+<h2>🚚 শুধুমাত্র ডেলিভারি সেবা</h2><p>শুধু পণ্য পাঠাতে চাইলে নিচের তথ্যগুলো পূরণ করুন। রিকুইজেশন পাওয়ার পরে ডেলিভারি চার্জ অ্যাডমিন নির্ধারণ করবেন।</p>
+<label for="dlSerial">১. সিরিয়াল নং</label><input id="dlSerial" type="text" placeholder="যেমন: DL-001">
+<label for="dlProduct">২. কি পণ্য ডেলিভারি করবেন?</label><input id="dlProduct" type="text" placeholder="যেমন: ১ বস্তা চাল / ১ কার্টন ঔষধ">
+<div class="address-panel"><h3>📍 কোথা থেকে নিতে হবে? (পিকআপ)</h3>
+<label for="dlPickupDivision">বিভাগ</label><select id="dlPickupDivision"><option value="">বিভাগ নির্বাচন করুন</option><option value="খুলনা">খুলনা</option></select>
+<label for="dlPickupDistrict">জেলা</label><select id="dlPickupDistrict" disabled><option value="">আগে বিভাগ নির্বাচন করুন</option></select>
+<label for="dlPickupUpazila">উপজেলা / থানা</label><select id="dlPickupUpazila" disabled><option value="">আগে জেলা নির্বাচন করুন</option></select>
+<label for="dlPickupDetails">গ্রাম / বাড়ি / রাস্তা / পরিচিত স্থান</label><textarea id="dlPickupDetails" placeholder="পিকআপের বিস্তারিত ঠিকানা লিখুন"></textarea></div>
+<div class="address-panel"><h3>📍 কোথায় যাবে? (গন্তব্য)</h3>
+<label for="dlDestDivision">বিভাগ</label><select id="dlDestDivision"><option value="">বিভাগ নির্বাচন করুন</option><option value="খুলনা">খুলনা</option></select>
+<label for="dlDestDistrict">জেলা</label><select id="dlDestDistrict" disabled><option value="">আগে বিভাগ নির্বাচন করুন</option></select>
+<label for="dlDestUpazila">উপজেলা / থানা</label><select id="dlDestUpazila" disabled><option value="">আগে জেলা নির্বাচন করুন</option></select>
+<label for="dlDestDetails">গ্রাম / বাড়ি / রাস্তা / পরিচিত স্থান</label><textarea id="dlDestDetails" placeholder="গন্তব্যের বিস্তারিত ঠিকানা লিখুন"></textarea></div>
+<label for="dlWeight">৩. কত কেজি / কি পরিমাণ পণ্য?</label><input id="dlWeight" type="text" placeholder="যেমন: ৫ কেজি / ২ বস্তা">
+<label for="dlName">৪. গ্রাহকের নাম</label><input id="dlName" type="text" placeholder="গ্রাহকের পুরো নাম">
+<label for="dlPhone">৫. গ্রাহকের মোবাইল</label><input id="dlPhone" type="tel" placeholder="01XXXXXXXXX" inputmode="numeric">
+<label for="dlTime">৬. ডেলিভারির সময়</label><input id="dlTime" type="datetime-local">
+<label for="dlAddress">৭. ডেলিভারির ঠিকানা</label><textarea id="dlAddress" placeholder="গ্রাম / মহল্লা, বাজার, বাড়ি নং, ল্যান্ডমার্ক"></textarea>
+<label for="dlCharge">৮. ডেলিভারি চার্জ / পরিবহন চার্জ (টাকা)</label><input id="dlCharge" type="number" placeholder="অ্যাডমিন নির্ধারণ করবেন" disabled>
+<p class="warning">⚠️ এই ঘরটি গ্রাহক পূরণ করতে পারবে না। রিকুইজেশন পাওয়ার পরে চার্জের পরিমাণ অ্যাডমিন দিবেন এবং সংশ্লিষ্ট মার্কেট প্রতিনিধির কাছে প্রেরণ করবেন।</p>
+<button type="button" id="submitDeliveryOnly">রিকুইজেশন পাঠান</button><p id="deliveryOnlyMessage" class="form-message"></p>
+</div>
+</section>
+
+<!-- বাজার প্রতিনিধির আলাদা ট্যাব তুলে দেওয়া হয়েছে - এখন অ্যাডমিনের ভিতরে -->
+<!-- অ্যাডমিন -->
+<section id="admin" class="screen"><h2>অ্যাডমিন প্যানেল</h2>
+<div class="stats"><article>নমুনা অর্ডার<strong>২৪</strong></article><article>সক্রিয় প্রতিনিধি<strong>০৮</strong></article><article>সেবা এলাকা<strong>০১ উপজেলা</strong></article></div>
+<div class="panel"><h3>অর্ডার ব্যবস্থাপনা</h3><table><tr><th>অর্ডার</th><th>এলাকা</th><th>অবস্থা</th><th>মূল্য</th></tr><tr><td>TB-1024</td><td>৩ নং ওয়ার্ড</td><td>কেনাকাটা চলছে</td><td>৳৮৫০</td></tr><tr><td>TB-1025</td><td>৫ নং ওয়ার্ড</td><td>অনুমোদনের অপেক্ষায়</td><td>৳১,২৩০</td></tr><tr><td>TB-1026</td><td>২ নং ওয়ার্ড</td><td>ডেলিভারি সম্পন্ন</td><td>৳৬৭০</td></tr></table></div>
+<div class="panel"><h3>🛒 পণ্য ব্যবস্থাপনা (শুধু অ্যাডমিন)</h3><p>নতুন পণ্য যোগ, ছবি, দাম এডিট ও ডিলিট — গ্রাহক এখানে কিছু করতে পারবে না। দাম এলাকা ভেদে আলাদা হবে।</p>
+<label>পণ্যের নাম</label><input id="admProdName" type="text" placeholder="যেমন: পালং শাক">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><div><label>ক্যাটাগরি</label><select id="admProdCat"><option>নিত্যপ্রয়োজনীয়</option><option>শাকসবজি</option><option>মাছ</option><option>মসলা</option></select></div><div><label>একক (আঁটি চলবে না)</label><select id="admProdUnit"><option value="কেজি">কেজি</option><option value="লিটার">লিটার (তেল জাতীয়)</option><option value="গ্রাম">গ্রাম (মসলা জাতীয়)</option></select></div></div>
+<label>বেস দাম (প্রতি একক, ৳) — জেলা / ইউনিয়ন দাম</label><input id="admProdPrice" type="number" placeholder="যেমন: 72">
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px"><div><label>বিভাগীয় শহর দাম (৳)</label><input id="admProdPriceDivision" type="number" placeholder="খালি থাকলে +৫%"></div><div><label>সিটি কর্পোরেশন দাম (৳)</label><input id="admProdPriceCity" type="number" placeholder="খালি থাকলে +৮%"></div></div>
+<label>পণ্যের ছবি (লিংক / URL)</label><input id="admProdImg" type="text" placeholder="https://... ছবির লিংক, না থাকলে ইমোজি হবে">
+<label>ইমোজি (ছবি না থাকলে)</label><input id="admProdEmoji" type="text" placeholder="যেমন: 🥬">
+<button type="button" id="admProdSave">পণ্য যোগ / আপডেট করুন</button><p id="admProdMsg" class="form-message"></p><div id="adminProductList"></div><p class="warning">⚠️ নিয়ম: আঁটি, বান্ডিল — এই এককে বিক্রি হবে না। সব পণ্য কেজি / গ্রাম / লিটারে হিসাব হবে, পরিবহন চার্জ সবসময় কেজিতে কনভার্ট করে বের হবে। তরল (তেল) ১ লিটার = ০.৯১ কেজি। ১০০০ গ্রাম = ১ কেজি।</p></div>
+<div class="panel"><h3>👥 বাজার প্রতিনিধি ও ব্যবসায়ী তদারকি (অ্যাডমিনের ভিতরে)</h3><p>অ্যাডমিনে চাপ দিলে এই ২টা কার্ড বাড়বে। আগের অ্যাডমিনের সবকিছু অপরিবর্তিত আছে।</p>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><button type="button" id="showRepCard">👤 বাজার প্রতিনিধি</button><button type="button" id="showBizCard">🏪 ব্যবসায়ীদের লিস্ট</button></div>
+<div id="repCard" hidden><h3 style="margin-top:16px">বাজার প্রতিনিধি যোগ করুন</h3><label>প্রতিনিধির নাম</label><input id="repName" type="text" placeholder="প্রতিনিধির নাম"><label>মোবাইল</label><input id="repPhone" type="tel" placeholder="01XXXXXXXXX"><label>এলাকা / উপজেলা</label><input id="repArea" type="text" placeholder="যেমন: কেশবপুর পৌরসভা"><label>দায়িত্বের বাজার</label><input id="repMarket" type="text" placeholder="যেমন: কেশবপুর কাঁচাবাজার"><button type="button" id="repSave">প্রতিনিধি যোগ করুন</button><div id="repList"></div><div class="panel" style="margin:16px 0 0"><h3>🚚 প্রতিনিধির জন্য পাঠানো ডেলিভারি</h3><p>অ্যাডমিন চার্জ নির্ধারণ করে এখানে পাঠালে প্রতিনিধি দেখতে পাবেন।</p><div id="partnerDeliveryList">এখনো কোনো ডেলিভারি-অনলি রিকুইজেশন পাঠানো হয়নি।</div></div></div>
+<div id="bizCard" hidden><h3 style="margin-top:16px">কাঁচাবাজার দোকান / ব্যবসা প্রতিষ্ঠান যোগ করুন</h3><p>দাম ও তথ্য যাচাইয়ের জন্য এই তথ্য সংরক্ষণ থাকবে।</p><label>দোকান / ব্যবসা প্রতিষ্ঠানের নাম</label><input id="bizShop" type="text" placeholder="যেমন: মায়ের দোয়া সবজি ঘর"><label>ব্যবসায়ীর নাম</label><input id="bizOwner" type="text" placeholder="ব্যবসায়ীর নাম"><label>ঠিকানা</label><input id="bizAddr" type="text" placeholder="বাজার, রোড, উপজেলা"><label>মোবাইল নম্বর</label><input id="bizPhone" type="tel" placeholder="01XXXXXXXXX"><label>এলাকা / বাজার</label><input id="bizArea" type="text" placeholder="যেমন: কেশবপুর কাঁচাবাজার"><button type="button" id="bizSave">ব্যবসায়ী যোগ করুন</button><div id="bizList"></div></div></div>
+<div class="panel"><h3>🚚 শুধুমাত্র ডেলিভারি - রিকুইজেশন ও চার্জ</h3><p>গ্রাহকের রিকুইজেশন এখানে আসবে। অ্যাডমিন চার্জের টাকা বসিয়ে মার্কেট প্রতিনিধির কাছে পাঠাবেন।</p><div id="adminDeliveryList">এখনো কোনো রিকুইজেশন আসেনি।</div></div>
+</section>
+<!-- হিসাব বিভাগ -->
+<section id="accounts" class="screen"><h2>হিসাব ও অর্থ বিভাগ</h2>
+<div class="stats"><article>নমুনা পণ্য মূল্য<strong>৳২৭,৫০০</strong></article><article>নমুনা সেবা আয়<strong>৳১,৩৭৫</strong></article><article>নমুনা ব্যয়<strong>৳৪,২০০</strong></article></div>
+<div class="panel"><h3>হিসাবের নীতি</h3><ul><li>গ্রাহকের অগ্রিম জমা আলাদা লেজারে থাকবে।</li><li>পণ্য ও সেবা সম্পন্ন হওয়ার পর প্রকৃত আয়-ব্যয় হিসাব হবে।</li><li>পণ্য ক্রয়, সেবা চার্জ, পরিবহন ও রিফান্ড পৃথকভাবে রেকর্ড হবে।</li></ul><p class="warning">সংখ্যাগুলো নমুনা, প্রকৃত আয় বা মুনাফা নয়।</p></div></section>
+<!-- HR -->
+<section id="hr" class="screen"><h2>মানবসম্পদ ব্যবস্থাপনা</h2><div class="panel"><h3>নমুনা টিম কাঠামো</h3><p><b>Founder & CEO</b> — ব্যবসায়িক কৌশল ও তদারকি</p><p><b>Co-Founder & COO</b> — অপারেশন ও প্রতিনিধি সমন্বয়</p><p><b>Delivery / Operations</b> — সংগ্রহ ও ডেলিভারি</p><p><b>Accounts & Finance</b> — আর্থিক প্রতিবেদন</p><p><b>Digital Marketing & Sales</b> — গ্রাহক ও প্রচারণা</p></div></section>
+<!-- ABOUT -->
+<section id="about" class="screen"><section class="info-section"><h2>আমাদের সম্পর্কে</h2><p class="section-intro">টাটকা বাজার একটি স্থানীয় বাজারভিত্তিক ডিজিটাল কেনাকাটা ও ডেলিভারি সেবার উদ্যোগ।</p>
+<div class="info-grid"><div class="info-card"><h3>আমাদের পরিচয়</h3><p>টাটকা বাজারের প্রাথমিক কার্যক্রম কেশবপুর, যশোরকে কেন্দ্র করে পরিকল্পনা করা হয়েছে।</p></div><div class="info-card"><h3>আমাদের লক্ষ্য</h3><p>সময় ও ভোগান্তি কমিয়ে স্থানীয় বাজারের পণ্য গ্রাহকের কাছে পৌঁছে দেওয়া।</p></div><div class="info-card"><h3>আমাদের ভবিষ্যৎ পরিকল্পনা</h3><p>কেশবপুর থেকে পরীক্ষামূলক কার্যক্রম শুরু করে ধাপে ধাপে অন্যান্য এলাকায় সম্প্রসারণের পরিকল্পনা রয়েছে।</p></div></div>
+<div class="info-note"><strong>বর্তমান অবস্থা:</strong> এই ওয়েবসাইটটি একটি প্রাথমিক সফটওয়্যার ডেমো/পরীক্ষামূলক প্রদর্শনী।</div></section>
+<hr class="page-divider"><section class="info-section" id="services"><h2>আমাদের সেবাসমূহ</h2><p class="section-intro">স্থানীয় বাজার থেকে প্রয়োজনীয় পণ্য সংগ্রহের পরিকল্পিত ডিজিটাল ব্যবস্থা।</p>
+<div class="info-grid"><div class="info-card"><h3>নিত্যপ্রয়োজনীয় পণ্য</h3><p>চাল, ডাল, তেল, লবণ, চিনি ও দৈনন্দিন প্রয়োজনীয় সামগ্রী।</p></div><div class="info-card"><h3>শাকসবজি ও ফলমূল</h3><p>স্থানীয় বাজার থেকে তাজা শাকসবজি ও মৌসুমি ফল সংগ্রহের পরিকল্পনা।</p></div><div class="info-card"><h3>মাছ ও অন্যান্য পণ্য</h3><p>গ্রাহকের চাহিদা অনুযায়ী মাছ এবং বাজারে পাওয়া অন্যান্য পণ্য।</p></div><div class="info-card"><h3>মসলা ও ব্যক্তিগত পরিচর্যা</h3><p>রান্নার মসলা, প্রসাধনী ও ব্যক্তিগত পরিচর্যার প্রয়োজনীয় সামগ্রী।</p></div></div></section>
+<hr class="page-divider"><section class="info-section" id="how-it-works"><h2>যেভাবে কাজ করার পরিকল্পনা</h2>
+<div class="info-grid"><div class="info-card"><h3>১. অর্ডার</h3><p>গ্রাহক প্রয়োজনীয় পণ্য ও পরিমাণ নির্বাচন করবেন।</p></div><div class="info-card"><h3>২. বাজার সংগ্রহ</h3><p>নির্ধারিত প্রতিনিধি স্থানীয় বাজার থেকে পণ্য সংগ্রহ করবেন।</p></div><div class="info-card"><h3>৩. দাম যাচাই</h3><p>সম্ভব হলে পণ্যের ছবি ও প্রকৃত ক্রয়মূল্য গ্রাহককে দেখানো হবে।</p></div><div class="info-card"><h3>৪. ডেলিভারি</h3><p>গ্রাহকের অনুমোদন ও বিল চূড়ান্ত হওয়ার পর পণ্য পৌঁছে দেওয়ার ব্যবস্থা করা হবে।</p></div></div></section></section>
+<!-- TEAM -->
+<section class="info-section screen" id="team"><h2>Management Team</h2><p class="section-intro">টাটকা বাজারের পরিকল্পিত পরিচালনা ও ব্যবস্থাপনা দলের পরিচিতি।</p>
+<div class="info-grid">
+<div class="info-card team-card"><div class="team-icon">স</div><h3>সুমাইয়া আক্তার</h3><p class="team-role">Founder & CEO</p><a class="team-phone" href="tel:+8801912751495">+880 1912-751495</a></div>
+<div class="info-card team-card"><div class="team-icon">জ</div><h3>মোঃ জিনারুল ইসলাম</h3><p class="team-role">Co-Founder & COO</p><a class="team-phone" href="tel:+8801911786336">+880 1911-786336</a></div>
+<div class="info-card team-card"><div class="team-icon">প</div><h3>শেখ পারভেজ মাহমুদ</h3><p class="team-role">Delivery / Operations Manager</p><a class="team-phone" href="tel:+8801912709914">+880 1912-709914</a></div>
+<div class="info-card team-card"><div class="team-icon">হ</div><h3>হাসিবুর রহমান</h3><p class="team-role">Accounts & Finance Executive</p><a class="team-phone" href="tel:+8801309519775">+880 1309-519775</a></div>
+<div class="info-card team-card"><div class="team-icon">M</div><h3>Maria Sultana</h3><p class="team-role">Digital Marketing & Sales Executive</p><a class="team-phone" href="tel:+8801910896121">+880 1910-896121</a></div>
+</div></section>
+<!-- CONTACT -->
+<section class="info-section screen" id="contact"><h2>যোগাযোগ করুন</h2><p class="section-intro">টাটকা বাজার সম্পর্কে জানতে, মতামত জানাতে অথবা সহযোগিতার জন্য যোগাযোগ করুন।</p>
+<div class="contact-panel"><div class="contact-item"><h3>হেল্পলাইন</h3><p>শেখ পারভেজ মাহমুদ</p><a class="contact-link" href="tel:+8801912709914">+880 1912-709914</a></div><div class="contact-item"><h3>ইমেইল</h3><p>আমাদের ইমেইল করুন</p><a class="contact-link" href="mailto:mtechcompanybd@gmail.com">mtechcompanybd@gmail.com</a></div><div class="contact-item"><h3>ঠিকানা</h3><p>আশরাফ মার্কেট, পৌরসভা রোড, কেশবপুর, যশোর, বাংলাদেশ।</p></div></div></section>
+</main>
+<hr class="page-divider">
+<section class="info-section" id="policies"><h2>নীতিমালা ও শর্তাবলি</h2><p class="section-intro">ব্যবহারকারীর তথ্য, সেবা গ্রহণ, পণ্য ফেরত এবং তথ্য সুরক্ষা বিষয়ে আমাদের প্রাথমিক নীতিমালার খসড়া।</p>
+<div class="policy-list">
+<details id="privacy"><summary>১. Privacy Policy — গোপনীয়তা নীতি</summary><div class="policy-content"><h4>তথ্য সংগ্রহ</h4><p>সেবা প্রদানের প্রয়োজন অনুযায়ী গ্রাহকের নাম, মোবাইল নম্বর, ডেলিভারি ঠিকানা, অর্ডারের বিবরণ সংগ্রহ করা হতে পারে।</p><h4>তথ্য শেয়ার</h4><p>অর্ডার সম্পন্ন করার জন্য প্রয়োজনীয় সীমিত তথ্য সংশ্লিষ্ট দায়িত্বপ্রাপ্ত প্রতিনিধির সঙ্গে শেয়ার করা হতে পারে।</p><h4>যোগাযোগ</h4><p>mtechcompanybd@gmail.com ঠিকানায় যোগাযোগ করুন।</p></div></details>
+<details id="terms"><summary>২. Terms & Conditions — ব্যবহারের শর্তাবলি</summary><div class="policy-content"><h4>সেবার বর্তমান অবস্থা</h4><p>বর্তমান ওয়েবসাইটটি প্রাথমিক ডেমো/পরীক্ষামূলক প্রদর্শনী।</p><h4>গ্রাহকের দায়িত্ব</h4><ul><li>সঠিক নাম, মোবাইল নম্বর ও ডেলিভারি ঠিকানা দেওয়া।</li><li>অর্ডারের পণ্য ও পরিমাণ যাচাই করা।</li></ul></div></details>
+<details id="refund"><summary>৩. Refund & Replacement Policy — ফেরত ও পরিবর্তন নীতি</summary><div class="policy-content"><h4>অভিযোগ জানানোর কারণ</h4><p>ভুল পণ্য, ক্ষতিগ্রস্ত পণ্য, অর্ডারের সঙ্গে অমিল হলে গ্রাহক অভিযোগ জানাতে পারবেন।</p><p>অভিযোগ ও সহায়তার জন্য হেল্পলাইন: <a href="tel:+8801912709914">+880 1912-709914</a></p></div></details>
+<details id="security"><summary>৪. Security & Data Protection Policy — নিরাপত্তা নীতি</summary><div class="policy-content"><h4>তথ্যের নিরাপত্তা</h4><p>গ্রাহকের ব্যক্তিগত তথ্য ও অর্ডারের তথ্য সুরক্ষিত রাখার জন্য প্রয়োজনীয় ব্যবস্থা বাস্তবায়নের পরিকল্পনা রয়েছে।</p></div></details>
+</div><div class="info-note"><strong>গুরুত্বপূর্ণ:</strong> উপরের নীতিমালাগুলো প্রাথমিক খসড়া এবং ডেমো প্রদর্শনের জন্য।</div></section>
+<footer id="footer"><strong>টাটকা বাজার</strong><p>A Brand of M-Tech</p><p>পছন্দের বাজার, বিশ্বস্ত মানুষের হাতে।</p>
+<div class="quick-links"><a href="#about">About Us</a><a href="#services">আমাদের সেবা</a><a href="#how-it-works">যেভাবে কাজ করে</a><a href="#team">Management Team</a><a href="#contact">Contact Us</a></div>
+<div class="quick-links"><a href="#privacy">Privacy Policy</a><a href="#terms">Terms & Conditions</a><a href="#refund">Refund Policy</a><a href="#security">Security Policy</a></div>
+<p>আশরাফ মার্কেট, পৌরসভা রোড, কেশবপুর, যশোর, বাংলাদেশ।</p>
+<p class="footer-contact">ইমেইল: <a href="mailto:mtechcompanybd@gmail.com">mtechcompanybd@gmail.com</a><br>হেল্পলাইন: <a href="tel:+8801912709914">+880 1912-709914</a></p>
+<small>© 2026 টাটকা বাজার। সর্বস্বত্ব সংরক্ষিত।<br>এটি একটি প্রাথমিক সফটওয়্যার ডেমো/পরীক্ষামূলক প্রদর্শনী।</small></footer>
+<script src="locations.js"></script>
+<script src="app.js"></script>
+</body></html>
